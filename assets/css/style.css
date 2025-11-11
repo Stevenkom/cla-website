@@ -50,92 +50,103 @@ body {
 .logo-wrap { max-width:1372px; margin:0 auto; padding:0 20px; }
 .main-logo { height:64px; }
 
-/* ===== Navbar (desktop) ===== */
-.navbar { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.06); position:sticky; top:0; z-index:1200; }
-.nav-inner { max-width:1372px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box; }
-
-.nav-left .mini-logo { height:44px; }
-
-/* Center links */
-.nav-links { display:flex; gap:22px; list-style:none; align-items:center; margin:0; padding:0; }
-.nav-links .nav-item { text-decoration:none; color:#222; font-weight:500; padding:8px 4px; }
-.nav-links .nav-item:hover, .nav-links .nav-item.active { color:#7a0c0c; }
-
-/* Dropdown desktop */
-.dropdown { position:relative; }
-.dropdown-menu {
-  display:none;
-  position:absolute;
-  top:44px;
-  left:0;
-  background:#fff;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  border-radius:6px;
-  padding:10px 0;
-  min-width:260px;
-  z-index:1250;
-}
-.dropdown:hover > .dropdown-menu { display:block; }
-.dropdown-menu li { padding:6px 16px; }
-.dropdown-menu li a { color:#333; text-decoration:none; display:block; }
-
-/* Right area */
-.nav-right { display:flex; align-items:center; gap:10px; }
-.btn { display:inline-block; padding:8px 14px; border-radius:6px; text-decoration:none; font-weight:600; }
-.join-btn { background:#7a0c0c; color:#fff; }
-.donate-btn { border:1px solid #7a0c0c; color:#7a0c0c; background:transparent; }
-
-/* Mobile toggle (hidden desktop) */
-.mobile-toggle { display:none; border:none; background:transparent; padding:6px 8px; cursor:pointer; }
-.mobile-toggle .bar { display:block; width:22px; height:2px; background:#333; margin:4px 0; transition:all .2s; }
-
-/* ===== FULLSCREEN MOBILE MENU ===== */
-.mobile-menu {
-  position:fixed;
-  inset:0;
-  display:none; /* shown via JS */
-  background: linear-gradient(180deg, rgba(43,13,14,0.98), rgba(26,9,9,0.98));
-  color:#fff;
-  z-index:2000;
-  overflow:auto;
-}
-.mobile-menu-inner { max-width:960px; margin:0 auto; padding:28px 20px; }
-.mobile-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
-.mobile-logo { height:56px; }
-.mobile-close { background:transparent; border:none; color:#fff; font-size:36px; line-height:1; cursor:pointer; }
-
-/* Mobile links: big buttons on colored background */
-.mobile-links { list-style:none; padding:0; margin:8px 0 22px 0; display:flex; flex-direction:column; gap:10px; }
-.mobile-links a,
-.mobile-dropdown-toggle {
-  display:block;
-  padding:16px 18px;
-  background: rgba(255,255,255,0.06);
-  color:#fff;
-  text-decoration:none;
-  font-size:18px;
-  border-radius:8px;
-  border: 1px solid rgba(255,255,255,0.04);
-  text-align:left;
+/* --- CSS Variables for Easy Customization --- */
+:root {
+    --primary-color: #882E33; /* Deep Red/Brown for HOME/JOIN */
+    --secondary-color: #FFFFFF; /* White/Light Background */
+    --text-color: #333333; /* Dark Text */
+    --light-text-color: #f0f0f0; 
+    --hover-color: #882E33;
+    --border-color: #DDDDDD; 
+    --padding-x: 1.5rem;
+    --padding-y: 1rem;
 }
 
-/* caret on mobile dropdown */
-.mobile-dropdown-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px; }
-
-.mobile-submenu { display:none; margin-top:8px; display:flex; flex-direction:column; gap:8px; }
-.mobile-submenu a { background: rgba(255,255,255,0.04); padding:12px 16px; font-size:16px; border-radius:6px; }
-
-/* Mobile CTA at bottom */
-.mobile-cta { display:flex; gap:12px; margin-top:18px; }
-.mobile-cta .btn { flex:1; text-align:center; }
-
-/* Responsive rules */
-@media (max-width: 900px) {
-  .nav-links, .nav-right .btn { display:none; }     /* hide desktop nav on mobile */
-  .mobile-toggle { display:block; }                 /* show hamburger */
-  .logo-wrap { padding:10px; }                      /* slightly tighter */
+/* --- Basic Reset for Lists and Links --- */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Key to horizontal layout */
+    align-items: center;
 }
 
+.nav-link, .nav-brand {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.75rem 1rem; /* Generous padding for easier clicking */
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+    font-weight: 500;
+}
+
+/* --- Header & Navigation Bar Styling (Flexbox) --- */
+.main-nav {
+    display: flex;
+    justify-content: space-between; /* Spreads out main elements */
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 0.5rem var(--padding-x); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    font-family: Arial, sans-serif;
+    min-height: 4rem; /* Ensures a good height */
+}
+
+/* --- Brand/Logo Styling --- */
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    padding: 0;
+}
+
+/* --- List & Item Styling --- */
+.nav-item:hover .nav-link {
+    color: var(--primary-color);
+}
+
+.current-page .nav-link {
+    color: var(--primary-color);
+    font-weight: 700;
+    /* Optional: Subtle border for active link */
+    border-bottom: 3px solid var(--primary-color); 
+}
+
+/* --- Buttons Styling --- */
+.nav-actions {
+    display: flex;
+    gap: 0.5rem; /* Space between the two buttons */
+}
+
+.button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px; /* Slightly rounded corners */
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button-primary:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
