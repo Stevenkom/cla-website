@@ -30,14 +30,19 @@
   <link rel="canonical" href="https://churchlifeafrica.org/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/cla-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/cla-logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/cla-logo.png">
+  <link rel="shortcut icon" href="assets/images/logo/cla-logo.png">
+
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="../assets/css/profile-template.css">
 <style>
   body {
     font-family: Inter, sans-serif;
@@ -52,109 +57,73 @@
 
 <body>
 
- <!-- Header will be loaded dynamically via JS -->
-  <header></header>
+<div class="profile-wrapper">
+
+    <!-- Back Link -->
+    <a href="../about.html" class="back-link">
+        <i class="fa fa-arrow-left"></i> Back to About Us
+    </a>
+
+    <!-- Top Maroon Header -->
+    <div class="top-header">
+        <h2>Fr. Kenneth Amadi</h2>
+        <p>Doctoral Student Affiliate</p>
+    </div>
+
 
 <main class="content">
-   <section class="profile-hero" aria-labelledby="profile-title">
-    <div class="container">
-      <div class="profile-header" role="banner">
-        <a href="../about.html" class="back-link-hero" aria-label="Back to About">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
-          <span>Back To About Us</span>
-        </a>
-        <div style="min-width:18px"></div>
-        <div>
-          <div id="profile-title" class="profile-name">Fr. Kenneth Amadi</div>
-          <div class="profile-role">Doctoral Student Affiliate</div>
-        </div>
-      </div>
+  <!-- Main Content Grid -->
+    <div class="profile-container">
 
-      <!-- Right aligned reserved area (keeps hero balanced) -->
-      <div aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <!-- MAIN PROFILE -->
-  <main class="profile-main" id="main">
-    <div class="profile-grid">
-
-      <!-- PHOTO / CONTACT COLUMN -->
-      <aside class="profile-photo" aria-label="Profile photo">
-        <img src="../assets/images/team/kenneth-amadi.jpg" alt="Fr. Kenneth Amadi">
-        <div style="height:12px"></div>
-        <a class="contact-pill" href="mailto:kamadi@nd.edu"><i class="fa fa-envelope"></i> kamadi@nd.edu</a>
-        <div style="height:8px"></div>
-        <a class="contact-pill" href="tel:+14144584834"><i class="fa fa-phone"></i> +1-414-458-4834</a>
-      </aside>
-
-      <!-- INFO & TABS COLUMN -->
-      <section class="profile-info" aria-labelledby="kenneth-heading">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap">
-          <div>
-            <h2 id="kenneth-heading" style="font-family:'Playfair Display', serif; color:var(--text); margin:0; font-size:22px;">
-              Fr. Kenneth Amadi
-            </h2>
-            <div style="color:var(--muted); font-size:0.95rem; margin-top:8px;">
-              Doctoral Student Affiliate
-            </div>
-          </div>
+        <!-- Photo -->
+        <div class="photo-box">
+            <img src="../assets/images/board/kenneth-amadi.PNG" alt="">
         </div>
 
-        <!-- tabs -->
-        <div class="profile-tabs" role="tablist" aria-label="Profile Sections">
-          <button class="tab-btn active" data-tab="bio" role="tab" aria-selected="true">Biography</button>
-          <button class="tab-btn" data-tab="edu" role="tab" aria-selected="false">Education</button>
-          <button class="tab-btn" data-tab="cite" role="tab" aria-selected="false">Citation List</button>
-        </div>
+        <!-- Content Card -->
+        <div class="content-card">
 
-        <div class="tab-content">
-
-          <!-- Biography -->
-          <div id="bio" class="tab-pane active" role="tabpanel">
-            <div class="profile-about">
-              <h3>About</h3>
-              <p>
-                Kenneth Onyemna Amadi is a Ph.D. candidate in Theology majoring in Liturgical Studies. With previous degrees in Philosophy (B.Phil., 2009) and Theology (B.S.T., 2014) from the Pontifical Urban University, Rome, and following priestly ordination in 2015, Father Amadi came to Notre Dame in 2017 earning a Master of Theological Studies degree (M.T.S., 2019) with concentration in Systematic Theology. His areas of interest include Liturgical and Sacramental Theology, Ethnography and Ritual Studies, Sociology and Anthropology of Christianity in Africa, and The Theology and Science of Gratitude.
-              </p>
-              <p>
-                His dissertation explores the religious imagination of contemporary African Christians through the ethnographic study of thanksgiving rituals in the Nigerian Catholic culture. Father Amadi’s research and pastoral experience reflect both academic depth and field engagement with parish communities.
-              </p>
+            <div class="contact-block">
+                <div class="contact-line">
+                    <i class="fa fa-envelope"></i> kamadi@nd.edu
+                </div>
+                <div class="contact-line">
+                    <i class="fa fa-phone"></i> +1 414-458-4834
+                </div>
             </div>
-          </div>
 
-          <!-- Education -->
-          <div id="edu" class="tab-pane" role="tabpanel">
-            <div class="profile-education">
-              <h3>Education</h3>
-              <ul class="meta-list">
-                <li>Ph.D. Candidate, Theology (Liturgical Studies), University of Notre Dame (in progress)</li>
-                <li>M.T.S., Master of Theological Studies, University of Notre Dame, 2019</li>
-                <li>B.S.T., Theology, Pontifical Urban University, Rome</li>
-                <li>B.Phil., Philosophy</li>
-              </ul>
+            <!-- Tabs -->
+            <div class="tabs">
+                
+                
             </div>
-          </div>
 
-          <!-- Citation List -->
-          <div id="cite" class="tab-pane" role="tabpanel">
-            <div class="profile-citations">
-              <h3>Citation List</h3>
-              <p class="meta-list">Selected works, chapters and conference presentations will appear here. You can later replace this with a full publications list or links to PDFs.</p>
-              <ol>
-                <li>Amadi, K. O. (2021). Ritual and Renewal: Thanksgiving Practices in Nigerian Parishes. Journal of African Liturgy. (forthcoming)</li>
-                <li>Amadi, K. O. (2019). Liturgical Formation in Context: A Case Study. Proceedings of the Augustine Institute Conference.</li>
-              </ol>
-            </div>
-          </div>
+            <!-- Bio Text -->
+            <p class="bio-text">
+                Kenneth Onyema Amadi is a Ph.D. Candidate in Theology majoring in Liturgical Studies...
+            </p>
 
         </div>
-
-        <a href="../about.html" class="back-small"><i class="fa fa-arrow-left"></i> Back To About Us</a>
-
-      </section>
 
     </div>
+
+
+    <!-- About Section -->
+    <div class="about-section">
+      
+        <h3>Bio</h3>
+
+        <p>
+          <button class="tab active">Biography</button>
+            Kenneth Onyema Amadi is a Ph.D. candidate in theology majoring in Liturgical Studies. With previous degrees in philosophy (B.Phil., 2009) and theology (B.S.T., 2014) from the Pontifical Urban University, Rome, and following priestly ordination in 2015, Father Amadi came to Notre Dame in 2017 earning a Master of Theological Studies degree (M.T.S., 2019) with concentration in Systematics. Ken’s areas of interest include liturgical and sacramental theology, ethnography and ritual studies, sociology and anthropology of Christianity in Africa, and the theology and science of gratitude. His dissertation explores the religious imagination of contemporary African Christians through the ethnographic study of thanksgiving rituals in the Nigerian Catholic culture.
+            Inspired by Notre Dame’s vision of Catholic education, Ken is currently working on Church Life Africa initiative whose goal is to close education and human development gaps in Africa by investing in the training and deployment of lay Africans as theologians, catechists, and service leaders for the global church and society. He is co-convener of the Church Life Africa Summer Conference in Nigeria. Also actively engaged in the local South Bend community, Fr Amadi serves as parochial vicar at St Joseph Church, Mishawaka where he also directs children’s religious education and adult faith formation.
+            A Sorin Fellow at the de Nicola Center for Ethics and Culture, and a graduate student affiliate at the Center for the Study of Religion and Society, Ken joined the Kellogg Institute as a doctoral student affiliate in 2021.
+        </p>
+    </div>
+
+</div>
+
+
 
 </main>
 <!-- Footer will be loaded dynamically via JS -->
@@ -163,42 +132,7 @@
   <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-<script>
-    (function () {
-      const tabs = document.querySelectorAll('.tab-btn');
-      const panes = document.querySelectorAll('.tab-pane');
 
-      function setActive(tabBtn) {
-        tabs.forEach(t => {
-          const sel = t === tabBtn;
-          t.classList.toggle('active', sel);
-          t.setAttribute('aria-selected', sel ? 'true' : 'false');
-        });
-        panes.forEach(p => p.classList.toggle('active', p.id === tabBtn.dataset.tab));
-        // scroll tab content into view nicely on small screens
-        const content = document.querySelector('.tab-content');
-        if (content && window.innerWidth < 800) {
-          content.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-
-      tabs.forEach(t => {
-        t.addEventListener('click', (e) => {
-          e.preventDefault();
-          setActive(t);
-        });
-      });
-
-      // keyboard navigation
-      tabs.forEach((t, i) => {
-        t.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowRight') tabs[(i+1) % tabs.length].focus();
-          if (e.key === 'ArrowLeft') tabs[(i-1+tabs.length) % tabs.length].focus();
-        });
-      });
-    })();
-  </script>
-
-  <script src="./assets/js/main.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

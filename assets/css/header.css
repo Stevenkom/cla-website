@@ -1,0 +1,214 @@
+/* ===========================
+   FIXED HEADER (Screenshot Style)
+   =========================== */
+
+/* STICKY TRANSPARENT OUTER HEADER */
+#site-header-outer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background: transparent;
+}
+
+/* INNER HEADER CONTAINER */
+#site-header-inner {
+  max-width: 1372px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  height: 145px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* LOGO LEFT, FLOATING ABOVE NAV */
+.logo-link {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+.logo-img {
+  height: 65px;
+  width: auto;
+}
+
+/* WHITE NAV BAR (WIDTH FULL) */
+.nav-box {
+  width: 100%;
+  margin-top: 65px;
+  background: #fff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ========== DESKTOP NAV ========== */
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.nav-list {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: #1a1a1a;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+.nav-link:hover {
+  background: #f4f4f4;
+}
+.nav-item.active .nav-link {
+  background: #7B1B1D;
+  color: white;
+}
+
+/* BUTTONS RIGHT */
+.nav-ctas {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.btn-join {
+  background: #7B1B1D;
+  color: #fff;
+}
+.btn-donate {
+  border: 2px solid #7B1B1D;
+  color: #7B1B1D;
+}
+.btn-donate:hover {
+  background: #7B1B1D;
+  color: #fff;
+}
+
+/* ========== DROPDOWN ========== */
+
+.nav-has-dropdown {
+  position: relative;
+}
+.nav-has-dropdown .nav-link::after {
+  content: " ▾";
+  font-size: 0.8em;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  background: #fff;
+  min-width: 230px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.dropdown a {
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  color: #111;
+  text-decoration: none;
+}
+.dropdown a:hover {
+  background: #f4f4f4;
+}
+@media (min-width: 880px) {
+  .nav-has-dropdown:hover .dropdown {
+    display: block;
+  }
+}
+
+/* ===========================
+   MOBILE (FIXED)
+   =========================== */
+
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 42px;
+  height: 42px;
+  background: white;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.bar {
+  width: 24px;
+  height: 2px;
+  background: #7B1B1D;
+  margin: 3px 0;
+  transition: .3s;
+}
+
+/* X Animation */
+.mobile-open .bar:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+.mobile-open .bar:nth-child(2) { opacity: 0; }
+.mobile-open .bar:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+.mobile-menu {
+  display: none;
+  background: #f0f7d8;
+  padding: 20px;
+  border-radius: 12px;
+}
+.mobile-menu.open {
+  display: block;
+}
+
+.nav-list-mobile {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-list-mobile a {
+  display: block;
+  padding: 14px 10px;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nav-list-mobile a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Mobile submenu */
+.mobile-submenu {
+  display: none;
+  padding-left: 14px;
+  margin-top: 6px;
+  border-left: 2px solid #ddd;
+}
+.mobile-submenu.open {
+  display: block;
+}
+
+/* ===========================
+   RESPONSIVE BREAKPOINT
+   =========================== */
+
+@media (max-width: 1080px) {
+  .nav-box { display: none; }
+  .hamburger { display: flex; }
+}

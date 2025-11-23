@@ -1,34 +1,71 @@
-<header class="main-header">
-    <nav class="main-nav">
-<<<<<<< HEAD
-        <a href="index.html" class="nav-brand">
-            <img src="#" alt="">
-        </a> 
-        
-        <ul class="nav-list">
-            <li class="nav-item current-page"><a href="index.html" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></li>
-            <li class="nav-item dropdown">
-                <a href="programs.html" class="nav-link">PROGRAMS <span class="dropdown-arrow">▼</span></a>
-=======
-        <a href="#" class="nav-brand">Logo/Brand</a> 
-        
-        <ul class="nav-list">
-            <li class="nav-item current-page"><a href="#" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">ABOUT US</a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link">PROGRAMS <span class="dropdown-arrow">▼</span></a>
->>>>>>> e8b959c6f5516ec20f374ff9c72a205017ff882a
-                </li>
-            <li class="nav-item"><a href="#" class="nav-link">EVENTS</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">RESOURCES</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">CONTACT US</a></li>
-        </ul>
-        
-        <div class="nav-actions">
-            <a href="#" class="button button-primary">JOIN</a>
-            <a href="#" class="button button-secondary">DONATE</a>
-        </div>
+<!-- ========== SITE HEADER ========== -->
+<div id="site-header">
 
-        </nav>
-</header>
+  <div class="header-container">
+
+    <!-- Logo -->
+    <a href="/index.html" class="header-logo">
+      <img src="/assets/images/logo/cla-official-logo.png" alt="Church Life Africa">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop">
+      <ul class="nav-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+
+        <li class="has-dropdown">
+          <a href="#">Programs</a>
+          <ul class="dropdown">
+            <li><a href="/programs/exploring-catholicism.html">Exploring Catholicism</a></li>
+            <li><a href="/programs/virtual-hangout.html">Virtual Hangout</a></li>
+            <li><a href="/programs/theology-for-service-leadership.html">Theology for Service Leadership</a></li>
+            <li><a href="/programs/conferences.html">Conferences</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/events.html">Events</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA Buttons -->
+    <div class="nav-actions">
+      <a href="/join.html" class="btn-join">Join</a>
+      <a href="/donate.html" class="btn-donate">Donate</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Slide Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About Us</a></li>
+
+      <li class="mobile-has-dropdown">
+        <a href="#" id="mobile-program-toggle">Programs ▾</a>
+        <ul class="mobile-dropdown">
+          <li><a href="/programs/exploring-catholicism.html">Exploring Catholicism</a></li>
+          <li><a href="/programs/virtual-hangout.html">Virtual Hangout</a></li>
+          <li><a href="/programs/theology-for-service-leadership.html">Theology for Service Leadership</a></li>
+          <li><a href="/programs/conferences.html">Conferences</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/events.html">Events</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+
+      <li><a href="/join.html" class="btn-join full">Join</a></li>
+      <li><a href="/donate.html" class="btn-donate full">Donate</a></li>
+    </ul>
+  </div>
+
+</div>

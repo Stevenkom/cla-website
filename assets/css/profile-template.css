@@ -1,0 +1,152 @@
+/* ===========================
+   WRAPPER
+=========================== */
+.profile-wrapper {
+    max-width: 1100px;
+    margin: 20px auto 80px;
+    padding: 0 20px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #7B1B1D;
+    text-decoration: none;
+}
+
+/* ===========================
+   HERO SECTION (TOP)
+=========================== */
+.hero-section {
+    background: #7B1B1D;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+}
+
+/* LEFT IMAGE */
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    position: relative;
+    top: 40px;  /* Overlap downward (as in your screenshot) */
+}
+
+/* RIGHT DETAILS */
+.hero-details h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.hero-details .title {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.detail-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.hero-divider {
+    margin-top: 20px;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* ===========================
+   INFO CARD
+=========================== */
+.info-card {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    margin-top: -10px; /* pulls up slightly under the hero image */
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: #fff;
+    padding: 6px 14px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #7B1B1D;
+    color: white;
+    border-color: #7B1B1D;
+}
+
+/* Bio text */
+.bio-text {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+.about-section {
+    margin-top: 35px;
+}
+
+.about-section h3 {
+    font-size: 1rem;
+    color: #7B1B1D;
+    border-bottom: 2px solid #7B1B1D;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 820px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 70%;
+        margin: 0 auto;
+        top: 20px;
+    }
+
+    .info-card {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image img {
+        width: 85%;
+    }
+}

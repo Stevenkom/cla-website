@@ -39,6 +39,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -56,9 +57,8 @@
 </head>
 
 <body>
-
- <!-- Header will be loaded dynamically via JS -->
-  <header></header>
+<!-- header placeholder -->
+<div id="header"></div>
 
 <main class="content">
   <section class="about-section">
@@ -91,8 +91,8 @@
     <a href="#mission" class="about-tab active">Our Mission</a>
     <a href="#vision" class="about-tab">Our Vision</a>
     <a href="#why-cla" class="about-tab">Why CLA?</a>
-    <a href="#formation" class="about-tab">Partnerships & Formation</a>
-    <a href="#bishop" class="about-tab">Statement by Bishop</a>
+    <a href="#partnerships" class="about-tab">Partnerships & Formation</a>
+    <a href="#bishop-endorsement" class="about-tab">Statement by Bishop</a>
     <a href="meet-team.html" class="about-tab">Meet The Team</a>
 
   </div>
@@ -102,7 +102,7 @@
 
     <!-- Mission Card -->
     <div class="mv-card">
-      <h2 class="mv-title">Our Mission</h2>
+      <h2 class="mv-title" id="mission">Our Mission</h2>
       <p>
         To invest in the future of the Church whose vital signs are visible in Africa. 
         Through integrated theological education, catechetical and liturgical formation, 
@@ -113,7 +113,7 @@
 
     <!-- Vision Card -->
     <div class="mv-card">
-      <h2 class="mv-title">Our Vision</h2>
+      <h2 class="mv-title" id="vision">Our Vision</h2>
       <p>
         We believe in the enduring hope that the future of the Church is in Africa. 
         The fruits of that hope are in the teeming population of enthusiastic Africans 
@@ -127,7 +127,7 @@
 </section>
 
 
-<section class="why-cla-section">
+<section class="why-cla-section" id="why-cla">
   <div class="why-cla-wrapper">
 
     <h2 class="why-title">Why CLA?</h2>
@@ -173,7 +173,7 @@
   </h2>
 
   <div class="endorsement-video-container">
-    <img src="assets/images/bishop-kaigama.jpg" 
+    <img src="./assets/images/misc/Archbishop-Kaigama.PNG" 
          alt="Archbishop Kaigama" 
          class="endorsement-image">
 
@@ -194,29 +194,13 @@
     <span class="close-video" onclick="closeBishopVideo()">&times;</span>
 
     <video id="bishopVideo" controls>
-      <source src="assets/videos/bishop.mp4" type="video/mp4">
+      <source src="../assets/images/videos/archbishop-kaigama.mp4" type="video/mp4">
       Your browser does not support HTML video.
     </video>
 
   </div>
 
 </div>
-
-
-<section id="formation" class="about-section-block">
-  <h2>Partnerships & Formation</h2>
-  <p>...</p>
-</section>
-
-<section id="bishop" class="about-section-block">
-  <h2>Statement by Bishop</h2>
-  <p>...</p>
-</section>
-
-<section id="team" class="about-section-block">
-  <h2>Meet The Team</h2>
-  <p>...</p>
-</section>
 
 
 </main>
@@ -228,5 +212,36 @@
 </script>
 
   <script src="./assets/js/main.js" defer></script>
+  <script src="./assets/js/header.js"></script>
+  <!-- modal script (paste before closing </body>) -->
+<script>
+(function(){
+  const modal = document.getElementById('bishopVideoModal');
+  const video = document.getElementById('bishopVideo');
+
+  window.openBishopVideo = function () {
+    if (!modal || !video) return;
+    modal.classList.add('active');
+    try { video.currentTime = 0; } catch(e){}
+    video.play().catch(()=>{});
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeBishopVideo = function () {
+    if (!modal || !video) return;
+    modal.classList.remove('active');
+    try { video.pause(); } catch(e){}
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      window.closeBishopVideo();
+    }
+  });
+
+})();
+</script>
+
 </body>
 </html>
