@@ -1,0 +1,234 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Church Life Africa | Forming Catholic Leaders for Africa</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta name="description" content="Church Life Africa is a faith-based initiative fostering Catholic leadership, service, and theological formation across Africa. Explore our programs, events, and community resources." />
+  <meta name="keywords" content="Church Life Africa, Catholic Formation, Theology, Leadership, Augustine Institute, CLA, Faith Development, Catholic Youth, Service Leadership, Christian Education, Africa Church" />
+  <meta name="author" content="Church Life Africa" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://churchlifeafrica.org/" />
+  <meta property="og:title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta property="og:description" content="Fostering Catholic leadership and faith formation across Africa through theology, community, and service." />
+  <meta property="og:image" content="https://churchlifeafrica.org/assets/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://churchlifeafrica.org/" />
+  <meta property="twitter:title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta property="twitter:description" content="Faith-based leadership formation and community programs for Catholics across Africa." />
+  <meta property="twitter:image" content="https://churchlifeafrica.org/assets/images/og-image.jpg" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://churchlifeafrica.org/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<!-- include header css (in <head> ideally) -->
+<link rel="stylesheet" href="/assets/css/header.css">
+</head>
+
+<body>
+<!-- header placeholder -->
+<div id="header"></div>
+
+<main class="content">
+  <section class="resources-page">
+    <div class="resources-hero">
+        <div class="resources-hero-overlay"></div>
+
+        <div class="resources-hero-content">
+            <h1>Unlock a World of Knowledge</h1>
+            <p>Dive into our collection of articles, guides, videos, designed to empower your journey and deepen your understanding.</p>
+        </div>
+    </div>
+
+<!-- 🔍 SEARCH BAR -->
+<div class="res-search-wrapper">
+    <input type="text" id="resSearchInput" placeholder="Search Resources...">
+    <button id="resSearchBtn">
+        <svg viewBox="0 0 24 24">
+            <path d="M10 2a8 8 0 0 1 5.3 13.9l5 5-1.4 1.4-5-5A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4z"/>
+        </svg>
+    </button>
+</div>
+
+<!-- 📚 CATEGORY FILTERS -->
+<div class="res-filter-wrapper">
+    <span class="res-filter-title">Filter Categories</span>
+    <div class="res-filter-options">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="articles">Articles</button>
+        <button class="filter-btn" data-filter="study">Study Group</button>
+        <button class="filter-btn" data-filter="guides">Guides</button>
+        <button class="filter-btn" data-filter="videos">Videos</button>
+        <button class="filter-btn" data-filter="reflections">Reflections</button>
+        <button class="filter-btn" data-filter="tribes">Tribes</button>
+    </div>
+</div>
+
+<!-- 📝 RESOURCE GRID -->
+<div class="res-grid">
+
+    <!-- CARD 1 -->
+    <div class="res-card" data-category="articles">
+        <img src="https://via.placeholder.com/600x350" alt="">
+        <div class="res-card-content">
+            <h3>Because Creation Demands Faith: A Reflection</h3>
+            <p>By Catherine Omokafe • 4 MIN READ</p>
+            <a href="#" class="res-read-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="res-card" data-category="guides">
+        <img src="https://via.placeholder.com/600x350" alt="">
+        <div class="res-card-content">
+            <h3>Catholic Social Teaching As a Preamble</h3>
+            <p>By Faith Idepefoye • 3 MIN READ</p>
+            <a href="#" class="res-read-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="res-card" data-category="videos">
+        <img src="https://via.placeholder.com/600x350" alt="">
+        <div class="res-card-content">
+            <h3>Faith and Community Impacts</h3>
+            <p>By Matthew • 5 MIN READ</p>
+            <a href="#" class="res-read-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="res-card" data-category="tribes">
+        <img src="https://via.placeholder.com/600x350" alt="">
+        <div class="res-card-content">
+            <h3>Because Creation Demands Faith Again</h3>
+            <p>By Catherine • 6 MIN READ</p>
+            <a href="#" class="res-read-btn">Read More</a>
+        </div>
+    </div>
+
+</div>
+<div class="pagination-container">
+  <div class="pagination-numbers" id="paginationNumbers"></div>
+
+  <button class="pagination-next" id="nextPageBtn">
+      Next →
+  </button>
+</div>
+
+
+</main>
+<!-- Footer will be loaded dynamically via JS -->
+  <footer></footer>
+
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  <script src="./assets/js/main.js" defer></script>
+  <script src="../assets/js/header.js" defer> </script>
+  <script>
+const searchInput = document.getElementById("resSearchInput");
+const searchBtn = document.getElementById("resSearchBtn");
+const cards = document.querySelectorAll(".res-card");
+const filterBtns = document.querySelectorAll(".filter-btn");
+
+function runSearch() {
+    const term = searchInput.value.toLowerCase();
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(term) ? "block" : "none";
+    });
+}
+
+searchBtn.addEventListener("click", runSearch);
+searchInput.addEventListener("keyup", runSearch);
+
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const category = btn.dataset.filter;
+
+        cards.forEach(card => {
+            if (category === "all" || card.dataset.category === category) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        searchInput.value = "";
+    });
+});
+
+const itemsPerPage = 4;
+let currentPage = 1;
+
+function renderPaginatedItems() {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    const slicedItems = filteredResults.slice(start, end);
+
+    renderCards(slicedItems);
+    renderPaginationButtons();
+}
+
+function renderPaginationButtons() {
+    const paginationNumbers = document.getElementById("paginationNumbers");
+    paginationNumbers.innerHTML = "";
+
+    const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("div");
+        btn.classList.add("pagination-number");
+        btn.innerText = i;
+
+        if (i === currentPage) btn.classList.add("active");
+
+        btn.addEventListener("click", () => {
+            currentPage = i;
+            renderPaginatedItems();
+            scrollToTop();
+        });
+
+        paginationNumbers.appendChild(btn);
+    }
+
+    document.getElementById("nextPageBtn").onclick = () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderPaginatedItems();
+            scrollToTop();
+        }
+    };
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+</script>
+
+
+
+</body>
+</html>
