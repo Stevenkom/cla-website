@@ -28,6 +28,24 @@
       to { background-position: -200% 0; }
     }
 
+    /* ── PROTECT SLIDER & AUTOTYPING — never hidden by our JS ── */
+    .cla-reel-section,
+    .cla-reel-viewport,
+    .cla-reel-track,
+    .cla-reel-slide,
+    .cla-reel-img,
+    .cla-reel-content,
+    .cla-reel-content *,
+    .typing-h,
+    [data-text],
+    .cla-reel-dots,
+    .cla-nav-dot {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      animation-play-state: running !important;
+    }
+
     /* ── STAT STRIP ── */
     #cla-stat-strip {
       width: 100%;
@@ -238,27 +256,21 @@
     }
 
     /* ── FAQ ITEMS ── */
-    .accordion-item {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .accordion-item.cla-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* accordion-item reveal is handled by original page CSS — we don't override it */
 
     /* ── ACCORDION CONTENT SMOOTH ── */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.45s cubic-bezier(0.25,0.46,0.45,0.94),
-                  padding 0.3s ease;
-      padding-bottom: 0;
+    /* NOTE: We only enhance the icon transition here.
+       The max-height animation is handled by the original stylesheet
+       to avoid conflicts with existing accordion behaviour. */
+    .accordion-header .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+                  color 0.25s ease;
     }
-    .accordion-item.active .accordion-content {
-      max-height: 600px;
-      padding-bottom: 1rem;
+    .accordion-item.active .accordion-header .icon {
+      transform: rotate(45deg);
     }
 
     /* ── SPONSOR MARQUEE PAUSE ON HOVER ── */
@@ -540,15 +552,19 @@
     }
 
     /* ── REEL SLIDE CONTENT ── */
-    .cla-reel-content {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
-    }
-    .cla-reel-slide.active .cla-reel-content,
-    .cla-reel-slide:first-child .cla-reel-content {
-      opacity: 1;
-      transform: translateY(0);
+    /* IMPORTANT: Never hide reel content or typing elements.
+       The slider JS controls visibility. We must not set opacity:0
+       on anything inside the reel or it breaks the autotyping. */
+    .cla-reel-section,
+    .cla-reel-slide,
+    .cla-reel-content,
+    .cla-reel-content h2,
+    .cla-reel-content p,
+    .typing-h,
+    [data-text] {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
     }
   `;
   document.head.appendChild(style);
@@ -724,8 +740,7 @@
     // Video columns — staggered
     observe('.video-column', i => i * 0.12);
 
-    // FAQ
-    observe('.accordion-item', i => i * 0.06);
+    // FAQ items — NOT observed (original CSS/JS handles their visibility)
 
     // Triple content children — staggered
     document.querySelectorAll('.triple-content h2, .triple-content p, .triple-content h3, .triple-content a').forEach((el, i) => {
@@ -734,6 +749,9 @@
     });
 
     // ── HOMEPAGE-SPECIFIC ──────────────────────────────────
+    // NOTE: .cla-reel-section, .cla-reel-slide, .cla-reel-content,
+    // .typing-h and [data-text] are intentionally excluded from
+    // the reveal observer — the slider JS manages these directly.
 
     // Hero footer banner
     observe('.hero-footer');
@@ -769,29 +787,10 @@
     init();
   }
 
-  /* ── 6. SMOOTH ACCORDION (replaces original handler) ─── */
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', function () {
-        const item = this.parentElement;
-        const isActive = item.classList.contains('active');
-
-        // Close all
-        document.querySelectorAll('.accordion-item.active').forEach(open => {
-          open.classList.remove('active');
-          const icon = open.querySelector('.icon');
-          if (icon) icon.textContent = '+';
-        });
-
-        // Open clicked
-        if (!isActive) {
-          item.classList.add('active');
-          const icon = this.querySelector('.icon');
-          if (icon) icon.textContent = '−';
-        }
-      });
-    });
-  });
+  /* ── 6. ACCORDION — no override, original handler is preserved ── */
+  /* We intentionally do NOT re-bind accordion clicks here.
+     The original handler in the HTML script block runs fine.
+     We only ensure .accordion-item elements are visible after reveal. */
 
 
   /* ══════════════════════════════════════════════════════════
