@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TSL Admin - Participant List</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #fdfbf7; }
+        
+        /* 1. Login Overlay Styles */
+        #loginOverlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #800000; display: flex; justify-content: center; align-items: center;
+            z-index: 9999; color: white;
+        }
+        .login-card { 
+            background: white; padding: 40px; border-radius: 12px; 
+            text-align: center; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+        }
+        .login-card input { 
+            padding: 12px; width: 220px; border: 1px solid #ccc; 
+            margin-bottom: 15px; border-radius: 4px; display: block; 
+            margin-left: auto; margin-right: auto; font-size: 1rem;
+        }
+        .login-card button { 
+            background: #800000; color: white; border: none; 
+            padding: 12px 30px; border-radius: 4px; cursor: pointer; 
+            font-weight: bold; width: 100%; transition: background 0.3s;
+        }
+        .login-card button:hover { background: #a00000; }
+
+        /* 2. Content Visibility */
+        #adminContent { display: none; } /* Hidden until password is correct */
+
+        /* 3. Your Original Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #800000; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .controls { margin-bottom: 20px; display: flex; gap: 15px; align-items: center; }
+        #downloadBtn { padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        select { padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+
+    <div id="loginOverlay">
+        <div class="login-card">
+            <h2 style="margin-top: 0; color: #800000;">TSL Secure Admin</h2>
+            <p style="color: #666; margin-bottom: 20px;">Enter credentials to view participants</p>
+            <input type="password" id="adminPass" placeholder="Password" autofocus>
+            <button onclick="unlockPortal()">Unlock Dashboard</button>
+            <p id="errorMessage" style="color: #d9534f; display: none; margin-top: 15px; font-weight: bold;">Incorrect Password</p>
+        </div>
+    </div>
+
+    <div id="adminContent">
+        <h2 style="color: #800000;">TSL Information Session Participants</h2>
+        
+        <div class="controls">
+            <button id="downloadBtn">Export to Excel (CSV)</button>
+            
+            <label>Filter by Participant Selected Date:</label>
+            <select id="dateFilter">
+                <option value="all">Show All</option>
+                <option value="March 30">March 30th Only</option>
+                <option value="April 7">April 7th Only</option>
+            </select>
+        </div>
+
+        <table id="participantTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Session Choice</th> 
+                    <th>Date Joined</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+    // --- PERSISTENT PASSWORD VERIFICATION ---
+    const MASTER_KEY = "TSL_Admin_2026"; // Change this to your preferred password
+
+    function unlockPortal() {
+        const input = document.getElementById('adminPass').value;
+
+        if (input === MASTER_KEY) {
+            // 1. Save "logged in" status to session storage
+            sessionStorage.setItem('tsl_admin_session', 'active');
+            
+            showDashboard();
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+            document.getElementById('adminPass').value = ""; 
+        }
+    }
+
+    function showDashboard() {
+        // 2. Hide login and reveal the data
+        document.getElementById('loginOverlay').style.display = 'none';
+        document.getElementById('adminContent').style.display = 'block';
+        
+        // If your admin-logic.js needs a specific trigger to load data, 
+        // you can call it here, e.g., if (window.loadData) window.loadData();
+    }
+
+    // --- CHECK ON PAGE LOAD ---
+    window.onload = function() {
+        // 3. If they already logged in this session, skip the password screen
+        if (sessionStorage.getItem('tsl_admin_session') === 'active') {
+            showDashboard();
+        }
+    };
+
+    // Allow "Enter" key to submit
+    document.getElementById("adminPass").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            unlockPortal();
+        }
+    });
+</script>
+
+    <script type="module" src="../assets/js/admin-logic.js"></script>
+</body>
+</html>

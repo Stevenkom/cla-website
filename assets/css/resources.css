@@ -1,0 +1,173 @@
+:root {
+  --cla-maroon: #800000;
+  --cla-maroon-hover: #5a0000;
+  --cla-dark-gray: #333333;
+  --cla-light-gray: #f8f9fa;
+  --cla-border: #e0e0e0;
+  --cla-text: #1a1a1a;
+}
+
+.cla-resources-container {
+  font-family: 'Georgia', serif;
+  color: var(--cla-text);
+  background-color: white;
+  line-height: 1.6;
+}
+
+.cla-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.cla-header {
+  padding: 60px 0;
+  text-align: center;
+  background: var(--cla-light-gray);
+}
+
+.cla-title {
+  font-size: 3rem;
+  color: var(--cla-maroon);
+  margin-bottom: 10px;
+}
+
+#cla-resource-search {
+  width: 100%;
+  max-width: 450px;
+  padding: 12px 20px;
+  border: 1px solid var(--cla-border);
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+/* Grid & Sections */
+.cla-section { padding: 50px 0; }
+.cla-bg-alt { background-color: #f0f0f0; }
+
+.cla-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--cla-maroon);
+  display: inline-block;
+}
+
+.cla-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Card Styling */
+.cla-card {
+  background: white;
+  border: 1px solid var(--cla-border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.cla-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* CRITICAL: VIDEO RATIO FIX */
+.cla-video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.cla-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cla-card-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cla-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cla-card-content h3 { color: var(--cla-maroon); margin-bottom: 10px; }
+
+/* Buttons */
+.cla-btn {
+  margin-top: auto;
+  background-color: var(--cla-maroon);
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: 0.3s;
+}
+
+.cla-btn:hover { background-color: var(--cla-maroon-hover); }
+
+.cla-app-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cla-app-content {
+    flex: 1.2;
+    padding: 60px;
+}
+
+.cla-app-visual {
+    flex: 0.8;
+    height: 100%;
+}
+
+.cla-app-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cla-app-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Specific styling for the app buttons */
+.cla-app-links .cla-univ-btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    background: #222; /* Darker academic look for app buttons */
+}
+
+.cla-app-links .cla-univ-btn:hover {
+    background: var(--cla-maroon);
+}
+
+@media (max-width: 768px) {
+    .cla-app-card { flex-direction: column; }
+    .cla-app-content { padding: 30px; }
+    .cla-app-visual { height: 200px; width: 100%; }
+}

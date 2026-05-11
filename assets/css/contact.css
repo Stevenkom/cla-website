@@ -1,0 +1,189 @@
+/* --- VARIABLES --- */
+:root {
+    --maroon: #800000;
+    --green: #2e7d32;
+    --black: #000000;
+    --soft-gray: #f4f4f4;
+    --white: #ffffff;
+}
+
+* --- CSS Variables for Easy Customization --- */
+:root {
+    --primary-color: #882E33; /* Deep Red/Brown for HOME/JOIN */
+    --secondary-color: #c7bfbf; /* White/Light Background */
+    --text-color: #1e1d1d; /* Dark Text */
+    --light-text-color: #f0f0f0; 
+    --hover-color: #882E33;
+    --border-color: #DDDDDD; 
+    --padding-x: 1.5rem;
+    --padding-y: 1rem;
+}
+
+/* --- BASE LAYOUT --- */
+.contact-page-wrapper {
+    padding-top: 80px; /* Offset for fixed header */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.contact-hero {
+    padding: 120px 0; /* Gives the background image more height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-hero .playfair-title {
+    font-size: 4rem; /* Makes it more authoritative */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Helps white text pop */
+}
+
+.playfair-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--maroon);
+    margin: 0;
+}
+
+.subtitle-green {
+    color: var(--green);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* --- CONTACT GRID --- */
+.contact-main-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* --- LEFT COLUMN: INFO --- */
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--maroon);
+    margin-bottom: 40px;
+}
+
+.info-block {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.info-icon {
+    color: var(--green);
+    font-size: 1.4rem;
+    padding-top: 5px;
+}
+
+.info-text h3 {
+    font-size: 1rem;
+    color: var(--maroon);
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.info-text p {
+    color: var(--black);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* --- RIGHT COLUMN: FORM --- */
+.contact-form-container {
+    background: var(--soft-gray);
+    padding: 50px;
+    border-radius: 4px;
+}
+
+.form-row {
+    margin-bottom: 25px;
+}
+
+.form-row label {
+    display: block;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.styled-form input, 
+.styled-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: var(--black);
+    background: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+.styled-form input:focus, 
+.styled-form textarea:focus {
+    border-color: var(--maroon);
+    outline: none;
+}
+
+.submit-btn {
+    background: var(--maroon);
+    color: var(--white);
+    border: none;
+    padding: 18px 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: #600000;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* --- MAP SECTION --- */
+.map-section {
+    line-height: 0; /* Removes bottom gap */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .playfair-title {
+        font-size: 2.8rem;
+    }
+    
+    .contact-form-container {
+        padding: 30px;
+    }
+}
+

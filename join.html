@@ -1,0 +1,294 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Church Life Africa | Forming Catholic Leaders for Africa</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta name="description" content="Church Life Africa is a faith-based initiative fostering Catholic leadership, service, and theological formation across Africa. Explore our programs, events, and community resources." />
+  <meta name="keywords" content="Church Life Africa, Catholic Formation, Theology, Leadership, Augustine Institute, CLA, Faith Development, Catholic Youth, Service Leadership, Christian Education, Africa Church" />
+  <meta name="author" content="Church Life Africa" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://churchlifeafrica.org/" />
+  <meta property="og:title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta property="og:description" content="Fostering Catholic leadership and faith formation across Africa through theology, community, and service." />
+  <meta property="og:image" content="https://churchlifeafrica.org/assets/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://churchlifeafrica.org/" />
+  <meta property="twitter:title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta property="twitter:description" content="Faith-based leadership formation and community programs for Catholics across Africa." />
+  <meta property="twitter:image" content="https://churchlifeafrica.org/assets/images/og-image.jpg" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://churchlifeafrica.org/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<!-- include header css (in <head> ideally) -->
+<link rel="stylesheet" href="/assets/css/header.css">
+<style>
+    .cla-registration-card {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    label { display: block; font-size: 0.75rem; font-weight: bold; margin-bottom: 8px; color: #800000; text-transform: uppercase; letter-spacing: 1px; }
+    input, select, textarea { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; box-sizing: border-box; background: #fafafa; }
+    input:focus, select:focus, textarea:focus { border-color: #800000; outline: none; background: #fff; }
+    .btn-submit-full { width: 100%; background: #800000; color: #fff; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
+    .btn-submit-full:disabled { opacity: 0.6; cursor: not-allowed; }
+    #responseMsg { text-align: center; margin-top: 25px; padding: 15px; border-radius: 4px; display: none; font-size: 0.95rem; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; gap: 15px; } .cla-registration-card { margin: 20px; padding: 25px; } }
+  </style>
+</head>
+
+<body style="background-color: #fdfbf7;">
+<!-- header placeholder -->
+<div id="header"></div>
+
+
+<main class="content">
+  <section class="join-section-overlay">
+    <div class="container header-container" style="padding: 40px 20px 0;">
+      <a href="index.html" class="back-link" style="text-decoration: none; color: #800000; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">
+        <i class="fa-solid fa-arrow-left"></i> Back To Website
+      </a>
+      <div class="page-title-wrapper" style="text-align: center; margin-top: 20px;">
+        <h1 style="font-family: 'Georgia', serif; font-size: 2.8rem; color: #1a1a1a;">Join Our Vibrant Community</h1>
+        <div style="background: #800000; height: 3px; width: 60px; margin: 15px auto;"></div>
+      </div>
+    </div>
+
+    <div class="cla-registration-card">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <img src="./assets/images/logo/favicon.png" alt="CLA Logo" style="width: 50px; margin-bottom: 10px;">
+        <h3 style="font-family: 'Georgia', serif; font-size: 1.4rem;">Member Registration</h3>
+      </div>
+
+      <form id="joinForm">
+        <div class="form-row form-group">
+          <div class="input-wrap">
+            <label>First Name</label>
+            <input type="text" id="firstName" placeholder="Enter Name" required>
+          </div>
+          <div class="input-wrap">
+            <label>Surname</label>
+            <input type="text" id="surname" placeholder="Enter Surname" required>
+          </div>
+        </div>
+
+        <div class="form-row form-group">
+          <div class="input-wrap">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="email@example.com" required>
+          </div>
+          <div class="input-wrap">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="+234..." required>
+          </div>
+        </div>
+
+        <div class="form-row form-group">
+          <div class="input-wrap">
+            <label>Diocese</label>
+            <input type="text" id="diocese" placeholder="Enter Diocese" required>
+          </div>
+          <div class="input-wrap">
+            <label>Parish</label>
+            <input type="text" id="parish" placeholder="Enter Parish" required>
+          </div>
+        </div>
+
+        <div class="form-row form-group">
+          <div class="input-wrap">
+            <label>Choose Your Tribe</label>
+            <select id="tribeChoice" required>
+              <option value="" disabled selected>Select Tribe</option>
+              <option value="Innovators-circle-tribes">Innovators Circle</option>
+              <option value="culture-creators-tribes">Culture Creators</option>
+              <option value="Service-builders-tribes">Service Builders</option>
+              <option value="faith-explorer-tribes">Faith Explorers</option>
+            </select>
+          </div>
+          <div class="input-wrap">
+            <label>Country in Africa</label>
+            <select id="country" required>
+              <option value="" disabled selected>Select Your Country</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Angola">Angola</option>
+              <option value="Benin">Benin</option>
+              <option value="Botswana">Botswana</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cabo Verde">Cabo Verde</option>
+              <option value="Cameroon">Cameroon</option>
+              <option value="Central African Republic">Central African Republic</option>
+              <option value="Chad">Chad</option>
+              <option value="Comoros">Comoros</option>
+              <option value="Congo (DRC)">Congo (DRC)</option>
+              <option value="Congo (Republic)">Congo (Republic)</option>
+              <option value="Djibouti">Djibouti</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Eswatini">Eswatini</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Gambia">Gambia</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Guinea-Bissau">Guinea-Bissau</option>
+              <option value="Ivory Coast">Ivory Coast</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Lesotho">Lesotho</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Libya">Libya</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="Malawi">Malawi</option>
+              <option value="Malaysia">Mali</option>
+              <option value="Mauritania">Mauritania</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Mozambique">Mozambique</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Seychelles">Seychelles</option>
+              <option value="Sierra Leone">Sierra Leone</option>
+              <option value="Somalia">Somalia</option>
+              <option value="South Africa">South Africa</option>
+              <option value="South Sudan">South Sudan</option>
+              <option value="Sudan">Sudan</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Togo">Togo</option>
+              <option value="Tunisia">Tunisia</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Zambia">Zambia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Educational Background</label>
+          <textarea id="education" rows="2" placeholder="Field of study or professional background" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Short Biography</label>
+          <textarea id="bio" rows="4" placeholder="Tell us about yourself and your journey in the faith" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-full">Complete Registration</button>
+        <p id="responseMsg"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAakOJDWxmoB59IN_f5nl8UaJos9Y2deBo",
+    authDomain: "cla-cluster-system.firebaseapp.com",
+    projectId: "cla-cluster-system",
+    storageBucket: "cla-cluster-system.firebasestorage.app",
+    messagingSenderId: "316235289418",
+    appId: "1:316235289418:web:39b89d1e86b637afcd27b3"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const joinForm = document.getElementById('joinForm');
+  const responseMsg = document.getElementById('responseMsg');
+  const tribeCollections = ["culture-creators-tribes", "faith-explorer-tribes", "Innovators-circle-tribes", "Service-builders-tribes"];
+
+  joinForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const emailInput = document.getElementById('email').value.toLowerCase().trim();
+    const selectedTribe = document.getElementById('tribeChoice').value;
+    const submitBtn = joinForm.querySelector('.btn-submit-full');
+
+    submitBtn.innerText = "Verifying Membership...";
+    submitBtn.disabled = true;
+    responseMsg.style.display = "none";
+
+    try {
+      let alreadyExists = false;
+      for (const colName of tribeCollections) {
+        const q = query(collection(db, colName), where("email", "==", emailInput));
+        const querySnapshot = await getDocs(q);
+        if (!querySnapshot.empty) { alreadyExists = true; break; }
+      }
+
+      if (alreadyExists) {
+        responseMsg.style.display = "block";
+        responseMsg.style.backgroundColor = "#fff4f4";
+        responseMsg.style.color = "#a02020";
+        responseMsg.innerText = "Notice: You are already registered with a tribe. Members can only join one tribe at a time.";
+        submitBtn.innerText = "Complete Registration";
+        submitBtn.disabled = false;
+        return;
+      }
+
+      const formData = {
+        firstName: document.getElementById('firstName').value,
+        surname: document.getElementById('surname').value,
+        email: emailInput,
+        phone: document.getElementById('phone').value,
+        diocese: document.getElementById('diocese').value,
+        parish: document.getElementById('parish').value,
+        country: document.getElementById('country').value,
+        education: document.getElementById('education').value,
+        bio: document.getElementById('bio').value,
+        joinedAt: new Date()
+      };
+
+      await addDoc(collection(db, selectedTribe), formData);
+      responseMsg.style.display = "block";
+      responseMsg.style.backgroundColor = "#e7f3ef";
+      responseMsg.style.color = "#2d5a27";
+      responseMsg.innerText = "Success! Welcome to the tribe. Redirecting...";
+      joinForm.reset();
+      setTimeout(() => { window.location.href = "index.html"; }, 3500);
+
+    } catch (error) {
+      console.error("Submission Error:", error);
+      responseMsg.style.display = "block";
+      responseMsg.style.backgroundColor = "#fdf5f5";
+      responseMsg.style.color = "#a02020";
+      responseMsg.innerText = "An error occurred. Please check your connection.";
+      submitBtn.innerText = "Complete Registration";
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+<script src="./assets/js/main.js" defer></script>
+<script src="./assets/js/header.js" defer></script>
+</body>
+</html>

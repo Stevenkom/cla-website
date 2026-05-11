@@ -1,0 +1,194 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Church Life Africa | Forming Catholic Leaders for Africa</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta name="description" content="Church Life Africa is a faith-based initiative fostering Catholic leadership, service, and theological formation across Africa. Explore our programs, events, and community resources." />
+  <meta name="keywords" content="Church Life Africa, Catholic Formation, Theology, Leadership, Augustine Institute, CLA, Faith Development, Catholic Youth, Service Leadership, Christian Education, Africa Church" />
+  <meta name="author" content="Church Life Africa" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://churchlifeafrica.org/" />
+  <meta property="og:title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta property="og:description" content="Fostering Catholic leadership and faith formation across Africa through theology, community, and service." />
+  <meta property="og:image" content="https://churchlifeafrica.org/assets/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://churchlifeafrica.org/" />
+  <meta property="twitter:title" content="Church Life Africa | Forming Catholic Leaders for Africa" />
+  <meta property="twitter:description" content="Faith-based leadership formation and community programs for Catholics across Africa." />
+  <meta property="twitter:image" content="https://churchlifeafrica.org/assets/images/og-image.jpg" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://churchlifeafrica.org/" />
+
+ 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/favicon.png">
+  <link rel="shortcut icon" href="assets/images/logo/favicon.png">
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: Inter, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", serif !important;
+  }
+</style>
+
+</head>
+
+<body>
+<!-- header placeholder -->
+<div id="header"></div>
+
+<main class="cla-univ-page">
+  <section class="cla-univ-hero">
+    <div class="cla-wrapper">
+      <nav class="cla-breadcrumb">Programs / Rural Evangelization</nav>
+      <h1 class="cla-univ-title">The Rural Evangelization Initiative</h1>
+      <p class="cla-univ-lead">
+        Currently in development, this program is dedicated to the faith formation of non-English speaking Catholics through the translation of resources into local heart languages, rural community outreach, 
+        and social impact programs for the poor and those on the margins of society.
+      </p>
+      <p class="cla-univ-lead">
+        In partnership with local Dioceses CLA takes up the challenging but life-giving mission of ministering to Christians in persecuted communities,
+         Internally Displaced Persons (IDP) camps, and areas affected by natural disasters in Nigeria.
+      </p>
+    </div>
+  </section>
+
+  <section class="cla-section">
+    <div class="cla-wrapper">
+      <div class="cla-univ-grid">
+        
+        <div class="cla-univ-img-container">
+          <img src="/assets/images/misc/Rural-evangelism.2.jpg" alt="Rural African Community">
+        </div>
+
+        <div class="cla-univ-text-container">
+          <h2 class="cla-univ-heading">Proposed Areas of Focus</h2>
+          <ul class="cla-univ-list">
+            <li><strong>Translations of </strong> Catechetical and Liturgical materials into major African languages.</li>
+            <li><strong>Development of </strong> new contents on Formed and Amen-App from local African contexts.</li>
+            <li><strong>Adapting </strong> Local Songs, Prayers and arts for Theological Enrichment.</li>
+            <li><strong>Fostering </strong> Solidarity with Catholics in rural areas through shared Prayers and mutual encouragement. </li>
+            <li><strong>Deploying</strong> our mission leaders and Service Builders to rural communities for Evangelization.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cla-section cla-univ-bg-gray">
+    <div class="cla-wrapper">
+      <div class="cla-status-card">
+        <div class="cla-status-content">
+          <h3 class="cla-univ-heading"></h3>
+          <p> Launching January 2027</p>
+        </div>
+        <div class="cla-status-cta">
+          <a href="/contact.html" class="cla-univ-btn">Inquire for Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer will be loaded dynamically via JS -->
+  <footer></footer>
+
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/header.js"></script>
+  <!-- modal script (paste before closing </body>) -->
+<script>
+(function(){
+  const modal = document.getElementById('bishopVideoModal');
+  const video = document.getElementById('bishopVideo');
+
+  window.openBishopVideo = function () {
+    if (!modal || !video) return;
+    modal.classList.add('active');
+    try { video.currentTime = 0; } catch(e){}
+    video.play().catch(()=>{});
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeBishopVideo = function () {
+    if (!modal || !video) return;
+    modal.classList.remove('active');
+    try { video.pause(); } catch(e){}
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      window.closeBishopVideo();
+    }
+  });
+
+})();
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select all accordion headers
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                
+                // Toggle the 'active' class on the clicked item
+                item.classList.toggle('active');
+
+                // Toggle the icon between + and −
+                const icon = this.querySelector('.icon');
+                if (item.classList.contains('active')) {
+                    icon.textContent = '−';
+                } else {
+                    icon.textContent = '+';
+                }
+
+                // Optional: Close other open accordion items (Single Open Mode)
+                /*
+                accordionHeaders.forEach(otherHeader => {
+                    const otherItem = otherHeader.parentElement;
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherHeader.querySelector('.icon').textContent = '+';
+                    }
+                });
+                */
+            });
+        });
+    });
+
+</script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+</body>
+</html>

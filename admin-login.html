@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<h2>Contact Messages</h2>
+<button id="logoutBtn">Logout</button>
+
+<div id="messagesTableContainer">
+    <table id="messagesTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="messagesBody"></tbody>
+    </table>
+</div>
+
+<p id="adminStatus"></p>
+
+<script type="module" src="assets/js/firebase.js"></script>
+<script type="module" src="assets/js/admin-login.js"></script>
+
+</body>
+</html>
