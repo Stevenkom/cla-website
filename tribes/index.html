@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribe Charism Discernment — Church Life Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --wine:#7D1E22;--wine-dark:#561216;--wine-lt:#F7E8E8;
+  --gold:#B07B2E;--gold-lt:#F0E6D0;--gold-bright:#D4A04A;
+  --cream:#FBF6EE;--ink:#1E1512;--muted:#6B5F57;--soft:#E8E0D5;
+  --teal:#0B6E52;--teal-lt:#D6F5EA;
+  --purple:#3F3480;--purple-lt:#EDE8FF;
+  --amber:#7A4C08;--amber-lt:#FEF0D0;
+  --serif:'Cormorant Garant',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  min-height:100vh;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 40% at 10% 20%, rgba(125,30,34,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 90% 80%, rgba(176,123,46,.06) 0%, transparent 70%);
+}
+.page{
+  position:relative;z-index:1;
+  max-width:680px;margin:0 auto;
+  padding:0 24px 80px;
+}
+.site-header{
+  padding:32px 0 0;
+  display:flex;align-items:center;gap:14px;
+  border-bottom:0.5px solid rgba(125,30,34,.15);
+  padding-bottom:20px;margin-bottom:0;
+}
+.logo-mark{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--wine);display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.logo-mark svg{width:20px;height:20px;fill:#fff}
+.site-name{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--wine);line-height:1.2}
+.site-sub{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.screen{display:none;animation:fadeUp .4s var(--ease) both}
+.screen.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.welcome-hero{padding:52px 0 0;text-align:center;}
+.welcome-pretitle{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.welcome-title{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--wine);line-height:1.08;margin-bottom:16px;}
+.welcome-title em{font-style:italic;color:var(--gold)}
+.welcome-desc{font-size:16px;color:var(--muted);line-height:1.75;max-width:500px;margin:0 auto 36px;}
+.welcome-rule{width:60px;height:2px;background:var(--gold);margin:0 auto 36px;border-radius:2px;}
+.tribe-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 auto 44px;text-align:left;}
+.tribe-pill{padding:12px 16px;border-radius:10px;border:0.5px solid;display:flex;align-items:center;gap:10px;}
+.tp-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.tp-name{font-weight:600;font-size:13px}
+.tp-charism{font-size:11.5px;opacity:.7}
+.start-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--wine);color:#fff;
+  border:none;border-radius:10px;cursor:pointer;
+  font-family:var(--sans);font-size:15px;font-weight:500;
+  padding:16px 40px;letter-spacing:.02em;
+  transition:background .2s var(--ease),transform .15s;
+}
+.start-btn:hover{background:var(--wine-dark);transform:translateY(-1px)}
+.start-btn:active{transform:scale(.98)}
+.start-btn svg{width:16px;height:16px;fill:#fff}
+.time-note{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.04em}
+.quiz-top{padding:32px 0 0}
+.progress-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.prog-label{font-size:12px;font-weight:500;color:var(--wine);letter-spacing:.05em}
+.prog-frac{font-size:12px;color:var(--muted)}
+.progress-track{height:4px;background:var(--soft);border-radius:99px;overflow:hidden;margin-bottom:8px;}
+.progress-fill{height:100%;background:var(--wine);border-radius:99px;transition:width .5s var(--ease);}
+.section-tag{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.q-card{background:#fff;border:0.5px solid rgba(125,30,34,.12);border-radius:16px;padding:32px 32px 28px;margin:20px 0 0;}
+.q-number{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--muted);margin-bottom:10px;}
+.q-text{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:28px;}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt-btn{
+  background:var(--cream);border:0.5px solid rgba(125,30,34,.15);
+  border-radius:10px;padding:14px 18px;text-align:left;cursor:pointer;
+  font-family:var(--sans);font-size:14.5px;color:var(--ink);line-height:1.55;
+  display:flex;align-items:flex-start;gap:12px;
+  transition:border-color .2s,background .2s,transform .1s;
+}
+.opt-btn:hover{border-color:var(--wine);background:#fff;transform:translateX(3px)}
+.opt-btn.selected{border:1.5px solid var(--wine);background:var(--wine-lt);transform:translateX(3px);}
+.opt-letter{
+  width:24px;height:24px;border-radius:50%;
+  background:rgba(125,30,34,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;color:var(--wine);
+  flex-shrink:0;margin-top:1px;
+  transition:background .2s,color .2s;
+}
+.opt-btn.selected .opt-letter{background:var(--wine);color:#fff}
+.opt-text{flex:1}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;}
+.nav-btn{
+  display:flex;align-items:center;gap:7px;
+  background:#fff;border:0.5px solid rgba(125,30,34,.2);
+  border-radius:8px;padding:10px 20px;cursor:pointer;
+  font-family:var(--sans);font-size:14px;font-weight:500;color:var(--muted);
+  transition:border-color .2s,color .2s,background .2s;
+}
+.nav-btn:hover:not(:disabled){border-color:var(--wine);color:var(--wine)}
+.nav-btn:disabled{opacity:.3;cursor:not-allowed}
+.nav-btn svg{width:14px;height:14px;fill:currentColor}
+.nav-btn.primary{background:var(--wine);color:#fff;border-color:var(--wine)}
+.nav-btn.primary:hover{background:var(--wine-dark)}
+.questions-remaining{font-size:12px;color:var(--muted)}
+.result-top{padding:40px 0 0}
+.result-pretitle{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;text-align:center;}
+.tribe-result-card{border-radius:16px;overflow:hidden;margin-bottom:20px;border:0.5px solid rgba(0,0,0,.1);}
+.tribe-result-banner{padding:32px 32px 26px;display:flex;flex-direction:column;}
+.result-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:10px}
+.result-tribe-name{font-family:var(--serif);font-size:42px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px;}
+.result-charism{font-size:15px;opacity:.75;color:#fff}
+.tribe-result-body{padding:26px 32px;background:#fff}
+.result-section-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.result-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:20px}
+.charism-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.c-tag{font-size:12px;font-weight:500;padding:4px 12px;border-radius:99px;border:0.5px solid;}
+.result-cta{background:var(--gold-lt);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--amber);line-height:1.65;}
+.result-cta strong{color:var(--wine-dark)}
+.tie-notice{
+  background:var(--wine-lt);border:0.5px solid rgba(125,30,34,.2);
+  border-radius:10px;padding:14px 18px;margin-bottom:16px;
+  font-size:13px;color:var(--wine-dark);line-height:1.6;
+  display:none;
+}
+.tie-notice strong{font-weight:600}
+.score-section{background:#fff;border:0.5px solid rgba(125,30,34,.12);border-radius:16px;padding:24px 28px;margin-bottom:20px;}
+.score-section h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--wine);margin-bottom:18px;}
+.score-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.score-row:last-child{margin-bottom:0}
+.score-name{font-size:13px;font-weight:500;color:var(--ink);min-width:140px}
+.score-track{flex:1;height:8px;background:var(--soft);border-radius:99px;overflow:hidden}
+.score-bar{height:100%;border-radius:99px;transition:width .8s var(--ease)}
+.score-pct{font-size:12px;color:var(--muted);min-width:32px;text-align:right}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.action-btn{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 20px;border-radius:10px;cursor:pointer;
+  font-family:var(--sans);font-size:14px;font-weight:500;
+  transition:background .2s,transform .1s;border:0.5px solid;
+  min-width:140px;
+}
+.action-btn:active{transform:scale(.98)}
+.action-btn.primary{background:var(--wine);color:#fff;border-color:var(--wine)}
+.action-btn.primary:hover{background:var(--wine-dark)}
+.action-btn.secondary{background:#fff;color:var(--wine);border-color:rgba(125,30,34,.3)}
+.action-btn.secondary:hover{background:var(--wine-lt)}
+.action-btn svg{width:14px;height:14px;fill:currentColor}
+.reg-top{padding:40px 0 0}
+.reg-header{
+  background:#fff;border:0.5px solid rgba(125,30,34,.12);
+  border-radius:16px;overflow:hidden;margin-bottom:20px;
+}
+.reg-tribe-band{
+  padding:20px 28px;
+  display:flex;align-items:center;gap:14px;
+}
+.reg-tribe-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.reg-tribe-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.7;color:#fff;margin-bottom:2px}
+.reg-tribe-name-lg{font-family:var(--serif);font-size:22px;font-weight:700;color:#fff;line-height:1.1}
+.reg-body{padding:22px 28px}
+.reg-intro{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-col-full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12px;font-weight:500;color:var(--wine);letter-spacing:.04em;text-transform:uppercase}
+.field input,.field select,.field textarea{
+  background:var(--cream);border:0.5px solid rgba(125,30,34,.2);
+  border-radius:8px;padding:10px 14px;
+  font-family:var(--sans);font-size:14px;color:var(--ink);
+  transition:border-color .2s,background .2s;
+  outline:none;width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--wine);background:#fff;
+}
+.field textarea{resize:vertical;min-height:70px;line-height:1.5}
+.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5F57' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.assigned-tribe-display{
+  background:var(--wine-lt);border:0.5px solid rgba(125,30,34,.2);
+  border-radius:8px;padding:10px 14px;
+  font-size:14px;font-weight:500;color:var(--wine-dark);
+  pointer-events:none;
+}
+.privacy-note{
+  font-size:11.5px;color:var(--muted);line-height:1.6;
+  padding:12px 14px;background:var(--soft);border-radius:8px;
+  margin-top:6px;
+}
+.submit-btn{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--wine);color:#fff;border:none;border-radius:10px;cursor:pointer;
+  font-family:var(--sans);font-size:15px;font-weight:500;
+  padding:16px 32px;letter-spacing:.02em;margin-top:20px;
+  transition:background .2s var(--ease),transform .15s;
+}
+.submit-btn:hover:not(:disabled){background:var(--wine-dark);transform:translateY(-1px)}
+.submit-btn:active{transform:scale(.98)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+.submit-btn svg{width:16px;height:16px;fill:#fff}
+.submit-btn .spinner{
+  width:16px;height:16px;border:2px solid rgba(255,255,255,.4);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin .7s linear infinite;display:none;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-error{
+  font-size:12px;color:#B91C1C;margin-top:4px;display:none;
+}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#B91C1C}
+.field.invalid .form-error{display:block}
+.confirm-top{padding:52px 0 0;text-align:center;}
+.confirm-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--teal-lt);display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+}
+.confirm-icon svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.confirm-title{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--wine);line-height:1.15;margin-bottom:12px;}
+.confirm-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:480px;margin:0 auto 32px;}
+.confirm-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 auto 36px;text-align:left;}
+.confirm-card{
+  background:#fff;border:0.5px solid rgba(125,30,34,.12);
+  border-radius:12px;padding:16px 18px;
+}
+.confirm-card-icon{font-size:20px;margin-bottom:6px}
+.confirm-card-title{font-size:12px;font-weight:600;color:var(--wine);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.confirm-card-text{font-size:13px;color:var(--muted);line-height:1.55}
+.quiz-footer{
+  text-align:center;padding-top:28px;margin-top:16px;
+  border-top:0.5px solid rgba(125,30,34,.1);
+  font-size:12px;color:var(--muted);
+}
+@media(max-width:520px){
+  .welcome-title{font-size:38px}
+  .tribe-preview{grid-template-columns:1fr}
+  .q-card{padding:22px 18px 20px}
+  .q-text{font-size:20px}
+  .result-tribe-name{font-size:32px}
+  .tribe-result-body{padding:20px 20px}
+  .form-grid{grid-template-columns:1fr}
+  .confirm-cards{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff}
+  body::before{display:none}
+  .result-actions,.reg-top,.confirm-top,.quiz-nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+    </div>
+    <div>
+      <div class="site-name">Church Life Africa</div>
+      <div class="site-sub">Tribe Initiative · Charism Discernment</div>
+    </div>
+  </header>
+
+  <div class="screen active" id="screen-welcome">
+    <div class="welcome-hero">
+      <div class="welcome-pretitle">Begin your discernment</div>
+      <div class="welcome-title">Which tribe<br>is <em>calling you?</em></div>
+      <div class="welcome-rule"></div>
+      <p class="welcome-desc">
+        God has placed a unique gift — a charism — within you that inclines you toward a particular way of serving His Church. This short discernment helps you identify the tribe where your God-given gifts will flourish most.
+      </p>
+      <div class="tribe-preview">
+        <div class="tribe-pill" style="background:#D6F5EA;border-color:#2BA07A">
+          <div class="tp-dot" style="background:#0B6E52"></div>
+          <div><div class="tp-name" style="color:#063D2D">Service Builders</div><div class="tp-charism" style="color:#0B6E52">Charity &amp; Action</div></div>
+        </div>
+        <div class="tribe-pill" style="background:#EDE8FF;border-color:#8B7AC4">
+          <div class="tp-dot" style="background:#3F3480"></div>
+          <div><div class="tp-name" style="color:#22185C">Faith Explorers</div><div class="tp-charism" style="color:#3F3480">Contemplation &amp; Inquiry</div></div>
+        </div>
+        <div class="tribe-pill" style="background:#FEF0D0;border-color:#C07A18">
+          <div class="tp-dot" style="background:#7A4C08"></div>
+          <div><div class="tp-name" style="color:#4A2C04">Innovators Circle</div><div class="tp-charism" style="color:#7A4C08">Creativity &amp; Solutions</div></div>
+        </div>
+        <div class="tribe-pill" style="background:#FFE4EC;border-color:#C05068">
+          <div class="tp-dot" style="background:#6B1D2A"></div>
+          <div><div class="tp-name" style="color:#3A0E16">Culture Creators</div><div class="tp-charism" style="color:#6B1D2A">Expression &amp; Witness</div></div>
+        </div>
+      </div>
+      <button class="start-btn" onclick="startQuiz()">
+        Begin discernment
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </button>
+      <div class="time-note">20 questions · approximately 5–7 minutes · options randomised · no wrong answers</div>
+    </div>
+    <footer class="quiz-footer">
+      churchlifeafrica.org &nbsp;·&nbsp; Tribe Charism Discernment &nbsp;·&nbsp; Version 1.0 · 2026
+    </footer>
+  </div>
+
+  <div class="screen" id="screen-quiz">
+    <div class="quiz-top">
+      <div class="progress-meta">
+        <span class="prog-label" id="prog-label">Question 1</span>
+        <span class="prog-frac" id="prog-frac">1 / 20</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill" style="width:5%"></div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="section-tag" id="section-tag"></div>
+      <div class="q-number" id="q-number"></div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options" id="options"></div>
+    </div>
+    <div class="quiz-nav">
+      <button class="nav-btn" id="back-btn" onclick="goBack()" disabled>
+        <svg viewBox="0 0 16 16"><path d="M13 8H3M7 12l-4-4 4-4"/></svg>
+        Back
+      </button>
+      <span class="questions-remaining" id="q-remaining"></span>
+      <button class="nav-btn primary" id="next-btn" onclick="goNext()" disabled>
+        Next
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </button>
+    </div>
+    <footer class="quiz-footer">
+      You can go back and change any answer at any time.
+    </footer>
+  </div>
+
+  <div class="screen" id="screen-result">
+    <div class="result-top">
+      <div class="result-pretitle">Your charism discernment</div>
+      <div class="tie-notice" id="tie-notice">
+        <strong>Close call!</strong> Your charism profile shows a near-equal affinity for two tribes. We've assigned you to <span id="tie-tribe-name"></span> based on your strongest final responses — but you may find resonance in both. The Tribe Buddy matching process will also take your secondary charism into account.
+      </div>
+      <div class="tribe-result-card" id="result-card">
+        <div class="tribe-result-banner" id="result-banner">
+          <div class="result-eyebrow" id="result-eyebrow"></div>
+          <div class="result-tribe-name" id="result-tribe-name"></div>
+          <div class="result-charism" id="result-charism-sub"></div>
+        </div>
+        <div class="tribe-result-body">
+          <div class="result-section-label">Your charism profile</div>
+          <div class="charism-tags" id="result-tags"></div>
+          <div class="result-section-label">What this means for you</div>
+          <div class="result-desc" id="result-desc"></div>
+          <div class="result-cta" id="result-cta"></div>
+        </div>
+      </div>
+      <div class="score-section">
+        <h3>Your full charism breakdown</h3>
+        <div id="score-bars"></div>
+      </div>
+      <div class="result-actions">
+        <button class="action-btn primary" onclick="proceedToRegister()">
+          <svg viewBox="0 0 16 16"><path d="M8 1v6H1M8 1h5a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7"/></svg>
+          Join this tribe
+        </button>
+        <button class="action-btn secondary" onclick="printResult()">
+          <svg viewBox="0 0 16 16"><path d="M4 6V2h8v4M4 12H2V7h12v5h-2M4 10h8v4H4z"/></svg>
+          Print / Save PDF
+        </button>
+        <button class="action-btn secondary" onclick="restart()" style="flex:0 0 auto;min-width:0;padding:13px 16px">
+          <svg viewBox="0 0 16 16"><path d="M3 8A5 5 0 1 0 8 3v3L4 2 8 0v3"/></svg>
+          Retake
+        </button>
+      </div>
+    </div>
+    <footer class="quiz-footer">
+      Church Life Africa · Tribe Initiative · churchlifeafrica.org/tribes
+    </footer>
+  </div>
+
+  <div class="screen" id="screen-register">
+    <div class="reg-top">
+      <div class="result-pretitle">One last step — join your tribe</div>
+      <div class="reg-header">
+        <div class="reg-tribe-band" id="reg-tribe-band">
+          <div class="reg-tribe-dot" id="reg-tribe-dot"></div>
+          <div>
+            <div class="reg-tribe-label">You have been assigned to</div>
+            <div class="reg-tribe-name-lg" id="reg-tribe-name-lg"></div>
+          </div>
+        </div>
+        <div class="reg-body">
+          <p class="reg-intro">
+            Complete your profile below. This information helps your Tribe Steward connect you with a Tribe Buddy, personalise your onboarding journey, and ensure you receive the right communications from day one.
+          </p>
+          <div class="form-grid">
+            <div class="field" id="field-firstname">
+              <label for="inp-firstname">First name</label>
+              <input type="text" id="inp-firstname" placeholder="e.g. Amara" autocomplete="given-name">
+              <span class="form-error">Please enter your first name.</span>
+            </div>
+            <div class="field" id="field-lastname">
+              <label for="inp-lastname">Last name</label>
+              <input type="text" id="inp-lastname" placeholder="e.g. Okonkwo" autocomplete="family-name">
+              <span class="form-error">Please enter your last name.</span>
+            </div>
+            <div class="field form-col-full" id="field-email">
+              <label for="inp-email">Email address</label>
+              <input type="email" id="inp-email" placeholder="yourname@email.com" autocomplete="email">
+              <span class="form-error">Please enter a valid email address.</span>
+            </div>
+            <div class="field form-col-full" id="field-whatsapp">
+              <label for="inp-whatsapp">WhatsApp number <span style="font-weight:400;opacity:.7;text-transform:none">(compulsory country code)</span></label>
+              <input type="tel" id="inp-whatsapp" placeholder="+234 801 234 5678" autocomplete="tel">
+              <span class="form-error">Number must start with a '+' followed by your country code (e.g., +234).</span>
+            </div>
+            <div class="field" id="field-location">
+              <label for="inp-location">City / Location</label>
+              <input type="text" id="inp-location" placeholder="e.g. Lagos, Nigeria">
+              <span class="form-error">Please enter your location.</span>
+            </div>
+            <div class="field" id="field-occupation">
+              <label for="inp-occupation">Occupation</label>
+              <input type="text" id="inp-occupation" placeholder="e.g. Teacher, Engineer…">
+              <span class="form-error">Please enter your occupation.</span>
+            </div>
+            <div class="field form-col-full" id="field-parish">
+              <label for="inp-parish">Parish</label>
+              <input type="text" id="inp-parish" placeholder="e.g. St. Peter's Catholic Church, Abuja">
+              <span class="form-error">Please enter your parish name.</span>
+            </div>
+            <div class="field" id="field-diocese">
+              <label for="inp-diocese">Diocese</label>
+              <input type="text" id="inp-diocese" placeholder="e.g. Archdiocese of Abuja">
+              <span class="form-error">Please enter your diocese.</span>
+            </div>
+            <div class="field" id="field-country">
+              <label for="inp-country">Country</label>
+              <select id="inp-country">
+                <option value="">— Select country —</option>
+                <option>Nigeria</option><option>Ghana</option><option>Kenya</option>
+                <option>Uganda</option><option>Tanzania</option><option>Rwanda</option>
+                <option>Ethiopia</option><option>South Africa</option><option>Cameroon</option>
+                <option>Côte d'Ivoire</option><option>Senegal</option><option>Democratic Republic of Congo</option>
+                <option>Zimbabwe</option><option>Zambia</option><option>Malawi</option>
+                <option>Mozambique</option><option>Angola</option><option>Namibia</option>
+                <option>Botswana</option><option>Sierra Leone</option><option>Liberia</option>
+                <option>Gambia</option><option>Togo</option><option>Benin</option>
+                <option>Niger</option><option>Chad</option><option>Sudan</option>
+                <option>Somalia</option><option>Egypt</option><option>Other (Diaspora)</option>
+              </select>
+              <span class="form-error">Please select your country.</span>
+            </div>
+            <div class="field form-col-full" id="field-education">
+              <label for="inp-education">Educational Background</label>
+              <select id="inp-education">
+                <option value="">— Select highest level —</option>
+                <option value="Secondary School">Secondary School / O-Level</option>
+                <option value="Diploma / HND">Diploma / HND</option>
+                <option value="Bachelor's Degree">Bachelor's Degree (B.Sc / B.A / B.Eng)</option>
+                <option value="Postgraduate Diploma">Postgraduate Diploma / PGD</option>
+                <option value="Master's Degree">Master's Degree (M.Sc / M.A / MBA)</option>
+                <option value="Doctorate / PhD">Doctorate / PhD</option>
+                <option value="Professional Certification">Professional Certification (CPA, ACCA, etc.)</option>
+                <option value="Vocational / Trade">Vocational / Trade Training</option>
+                <option value="Currently Studying">Currently Studying</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+              <span class="form-error">Please select your educational background.</span>
+            </div>
+            <div class="field form-col-full" id="field-bio">
+              <label for="inp-bio">Short Bio <span style="font-weight:400;opacity:.7;text-transform:none">(2–4 sentences)</span></label>
+              <textarea id="inp-bio" style="min-height:90px" placeholder="Tell us a little about yourself — your faith journey, what drives you, and what you bring to the CLA community."></textarea>
+              <span class="form-error">Please share a short bio (at least 20 characters).</span>
+            </div>
+            <div class="field form-col-full" id="field-goals">
+              <label for="inp-goals">Personal Goals <span style="font-weight:400;opacity:.7;text-transform:none">(optional)</span></label>
+              <textarea id="inp-goals" placeholder="What do you hope to grow in, contribute to, or learn through the Tribe Initiative?"></textarea>
+            </div>
+            <div class="field form-col-full">
+              <label>Assigned tribe</label>
+              <div class="assigned-tribe-display" id="assigned-tribe-display"></div>
+            </div>
+            <div class="field form-col-full">
+              <label for="inp-howheard">How did you hear about us?</label>
+              <select id="inp-howheard">
+                <option value="">— Select one —</option>
+                <option value="Parish announcement">Parish announcement</option>
+                <option value="Friend or family member">Friend or family member</option>
+                <option value="Social media">Social media</option>
+                <option value="CLA website">CLA website</option>
+                <option value="Email newsletter">Email newsletter</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <p class="privacy-note">
+            🔒 Your information is held securely and used solely for the Tribe Initiative. It will not be shared with third parties. You can update or remove your profile at any time by contacting your Tribe Steward.
+          </p>
+          <button class="submit-btn" id="submit-btn" onclick="submitForm()">
+            <div class="spinner" id="submit-spinner"></div>
+            <svg id="submit-icon" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            Complete my registration
+          </button>
+          <div id="submit-error" style="display:none;margin-top:14px;padding:12px 16px;background:#FEF2F2;border:0.5px solid #FECACA;border-radius:8px;font-size:13px;color:#B91C1C;line-height:1.5">
+            There was a problem submitting your registration. Please try again, or contact us directly at <strong>tribes@churchlifeafrica.org</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="quiz-footer">
+      Church Life Africa · Tribe Initiative · churchlifeafrica.org/tribes
+    </footer>
+  </div>
+
+  <div class="screen" id="screen-confirm">
+    <div class="confirm-top">
+      <div class="confirm-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="welcome-pretitle" style="margin-bottom:8px">Welcome to the tribe</div>
+      <div class="confirm-title">You're in,<br><em id="confirm-firstname"></em>.</div>
+      <p class="confirm-sub">
+        Your registration for <strong id="confirm-tribe"></strong> has been received. Your Tribe Steward and Tribe Buddy will be in touch shortly via email and WhatsApp.
+      </p>
+      <div class="confirm-cards">
+        <div class="confirm-card">
+          <div class="confirm-card-icon">✉️</div>
+          <div class="confirm-card-title">Check your email</div>
+          <div class="confirm-card-text">A welcome message with your onboarding details has been sent to your inbox.</div>
+        </div>
+        <div class="confirm-card">
+          <div class="confirm-card-icon">💬</div>
+          <div class="confirm-card-title">Watch WhatsApp</div>
+          <div class="confirm-card-text">Your Tribe Buddy will reach out on WhatsApp within 48 hours to begin your 60-day journey.</div>
+        </div>
+        <div class="confirm-card">
+          <div class="confirm-card-icon">📅</div>
+          <div class="confirm-card-title">Orientation call</div>
+          <div class="confirm-card-text">You'll receive a calendar invite for your tribe orientation session in the coming days.</div>
+        </div>
+        <div class="confirm-card">
+          <div class="confirm-card-icon">🙏</div>
+          <div class="confirm-card-title">Keep discerning</div>
+          <div class="confirm-card-text">Save your charism result — it's a beautiful guide for your prayer and service life.</div>
+        </div>
+      </div>
+      <button class="start-btn" onclick="printResult()" style="margin-top:8px">
+        <svg viewBox="0 0 16 16"><path d="M4 6V2h8v4M4 12H2V7h12v5h-2M4 10h8v4H4z"/></svg>
+        Save your result as PDF
+      </button>
+    </div>
+    <footer class="quiz-footer" style="margin-top:40px">
+      Church Life Africa · Tribe Initiative · churchlifeafrica.org/tribes
+    </footer>
+  </div>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   TRIBE DATA
+   ══════════════════════════════════════ */
+const TRIBES = {
+  SB:{
+    name:"Service Builders", charism:"Charity & Action",
+    banner:"#0B6E52", tagBg:"#D6F5EA", tagText:"#063D2D", tagBorder:"#2BA07A", barColor:"#0B6E52",
+    tags:["Service","Charity","Sacrifice","Solidarity","Transformation","Mercy","Leadership","Hope","Corporal Works","Practical Love"],
+    desc:"You are drawn to be the hands and feet of Christ. Your gift is love made visible — through sacrifice, practical care, and a burning desire to serve the vulnerable. You thrive when rolling up your sleeves and making a tangible difference in people's lives. In the Church, you are the one who shows up.",
+    cta:`<strong>Your tribe awaits:</strong> Complete the registration form below and your Steward will send you your onboarding details and orientation schedule.`
+  },
+  FE:{
+    name:"Faith Explorers", charism:"Contemplation & Inquiry",
+    banner:"#3F3480", tagBg:"#EDE8FF", tagText:"#22185C", tagBorder:"#8B7AC4", barColor:"#3F3480",
+    tags:["Faith","Evangelism","Prayer","Formation","Catechism","Discovery","Reflection","Mission","Volunteerism","Spirituality"],
+    desc:"You are a grounded seeker and a builder of faith. Your gift is helping others encounter Christ through Scripture, catechesis, and prayer. You are drawn to deepen your own faith and carry others along with you on that journey. In the Church, you are the one who grounds and illuminates.",
+    cta:`<strong>Your tribe awaits:</strong> Complete the registration form below and your Steward will send you your onboarding details and orientation schedule.`
+  },
+  IC:{
+    name:"Innovators Circle", charism:"Creativity & Solutions",
+    banner:"#7A4C08", tagBg:"#FEF0D0", tagText:"#4A2C04", tagBorder:"#C07A18", barColor:"#B07B2E",
+    tags:["Innovation","Digital Evangelization","Problem Solving","Media","Tools","Adaptability","Skills","Imagination","Resilience","Methods"],
+    desc:"You are a creative problem-solver who sees every challenge as an opportunity. Your gift is building the tools, platforms, and systems that carry the Gospel further and faster. You thrive where faith meets imagination and technology. In the Church, you are the one who builds what has not yet been built.",
+    cta:`<strong>Your tribe awaits:</strong> Complete the registration form below and your Steward will send you your onboarding details and orientation schedule.`
+  },
+  CC:{
+    name:"Culture Creators", charism:"Expression & Witness",
+    banner:"#6B1D2A", tagBg:"#FFE4EC", tagText:"#3A0E16", tagBorder:"#C05068", barColor:"#6B1D2A",
+    tags:["Arts","Storytelling","Beauty","Inspiration","Expression","Narration","Curiosity","Design","Creativity","Catholic Culture"],
+    desc:"You are a shaper of culture and a witness through beauty. Your gift is the ability to make truth come alive through story, art, and creative expression. You believe the Catholic faith is beautiful — and you want the world to see that beauty. In the Church, you are the one who makes the Gospel unforgettable.",
+    cta:`<strong>Your tribe awaits:</strong> Complete the registration form below and your Steward will send you your onboarding details and orientation schedule.`
+  }
+};
+
+/* ══════════════════════════════════════
+   QUESTIONS
+   ══════════════════════════════════════ */
+const QUESTIONS = [
+  {s:"How you engage",q:"When a community problem needs solving, your first instinct is to…",opts:[
+    {t:"Gather people and organise a practical, immediate response",tribe:"SB"},
+    {t:"Research the root cause and help others understand it more deeply",tribe:"FE"},
+    {t:"Design a smarter system or tool that prevents it from recurring",tribe:"IC"},
+    {t:"Tell the story of those affected so others are moved to respond",tribe:"CC"}
+  ]},
+  {s:"How you engage",q:"A friend is going through a very difficult time. You naturally…",opts:[
+    {t:"Show up physically — bring food, help with tasks, just be present",tribe:"SB"},
+    {t:"Sit with them, listen deeply, pray with them, and offer spiritual perspective",tribe:"FE"},
+    {t:"Research resources, connect them to support networks, find practical solutions",tribe:"IC"},
+    {t:"Write them something meaningful, create something for them, or share a piece of art",tribe:"CC"}
+  ]},
+  {s:"How you engage",q:"If you could volunteer your time at a CLA event, you would most want to…",opts:[
+    {t:"Serve directly: welcome people, help with logistics, ensure everyone is cared for",tribe:"SB"},
+    {t:"Facilitate a Bible reflection or lead a formation discussion",tribe:"FE"},
+    {t:"Manage the livestream, handle digital tools, or improve how the event runs",tribe:"IC"},
+    {t:"Design the visuals, photograph the event, or write the recap story",tribe:"CC"}
+  ]},
+  {s:"How you engage",q:"What would make you feel most fulfilled after a church project?",opts:[
+    {t:"Knowing that someone's life was concretely better because of what we did",tribe:"SB"},
+    {t:"Knowing that someone's faith was deepened or their questions were answered",tribe:"FE"},
+    {t:"Knowing that we built something that will keep working long after we are gone",tribe:"IC"},
+    {t:"Knowing that we created something beautiful that touched people's hearts",tribe:"CC"}
+  ]},
+  {s:"Your natural strengths",q:"People who know you well would most likely describe you as…",opts:[
+    {t:"Dependable, generous, and always willing to go the extra mile for others",tribe:"SB"},
+    {t:"Thoughtful, spiritually grounded, someone who makes others think deeply",tribe:"FE"},
+    {t:"Creative, resourceful, and someone who always has a fresh idea or solution",tribe:"IC"},
+    {t:"Expressive, inspiring, and someone who tells a story unlike anyone else",tribe:"CC"}
+  ]},
+  {s:"Your natural strengths",q:"When you are truly 'in your element', you are…",opts:[
+    {t:"Doing something that directly helps a specific person in front of you",tribe:"SB"},
+    {t:"Studying, praying, or having a deep conversation about faith and truth",tribe:"FE"},
+    {t:"Building, designing, or testing a new idea, process, or platform",tribe:"IC"},
+    {t:"Writing, photographing, creating, or producing in some artistic form",tribe:"CC"}
+  ]},
+  {s:"Your natural strengths",q:"Which of these phrases resonates most strongly with how you see yourself?",opts:[
+    {t:'"I want to put love into action — faith without works is dead"',tribe:"SB"},
+    {t:'"I want to ground people firmly in the truth of the Catholic Faith"',tribe:"FE"},
+    {t:'"I want to find smarter, bolder ways to reach people with the Gospel"',tribe:"IC"},
+    {t:'"I want to make the Gospel beautiful, visible, and unforgettable"',tribe:"CC"}
+  ]},
+  {s:"Your natural strengths",q:"If you were given one afternoon to contribute to CLA, you would spend it…",opts:[
+    {t:"Visiting a family in need, organising a service drive, or delivering resources",tribe:"SB"},
+    {t:"Writing a catechetical piece, hosting a Scripture Q&A, or preparing a faith talk",tribe:"FE"},
+    {t:"Improving the website, creating a digital tool, or solving a workflow problem",tribe:"IC"},
+    {t:"Producing content — a short film, visual series, podcast, or essay",tribe:"CC"}
+  ]},
+  {s:"Faith & spirituality",q:"When you think about your Catholic faith, what moves you most?",opts:[
+    {t:"The call to serve the poor and marginalised with the love of Christ",tribe:"SB"},
+    {t:"The depth of the Church's teaching, Scripture, and tradition of prayer",tribe:"FE"},
+    {t:"The way the Church adapts to new times while holding firm to eternal truth",tribe:"IC"},
+    {t:"The beauty of Catholic art, liturgy, music, and the richness of Catholic culture",tribe:"CC"}
+  ]},
+  {s:"Faith & spirituality",q:"Which Catholic figure do you most identify with?",opts:[
+    {t:"St. Teresa of Calcutta — radical love for the poor expressed in daily sacrifice",tribe:"SB"},
+    {t:"St. Thomas Aquinas or St. Augustine — seekers of truth who illuminated the Faith",tribe:"FE"},
+    {t:"Bl. Carlo Acutis — a modern Catholic who used technology for evangelisation",tribe:"IC"},
+    {t:"Bl. Fra Angelico or Tolkien — artists who proclaimed truth through beauty",tribe:"CC"}
+  ]},
+  {s:"Faith & spirituality",q:"How do you most naturally pray?",opts:[
+    {t:"Through acts of service — I encounter God most in serving others",tribe:"SB"},
+    {t:"Through lectio divina, the Rosary, Adoration, or structured prayer",tribe:"FE"},
+    {t:"Through reflection on how God is working through new challenges and opportunities",tribe:"IC"},
+    {t:"Through music, art, journaling, or other creative expressions of praise",tribe:"CC"}
+  ]},
+  {s:"Faith & spirituality",q:"Which Scripture passage speaks most directly to your heart?",opts:[
+    {t:'"Whatever you did for the least of my brothers and sisters, you did for me." — Matthew 25:40',tribe:"SB"},
+    {t:'"Go therefore and make disciples of all nations." — Matthew 28:19',tribe:"FE"},
+    {t:'"See, I am doing something new!" — Isaiah 43:19',tribe:"IC"},
+    {t:'"Whatever is true, noble, right, pure, lovely — think about such things." — Philippians 4:8',tribe:"CC"}
+  ]},
+  {s:"Working & collaborating",q:"In a group project, you naturally take on the role of…",opts:[
+    {t:"The executor — getting things done, showing up reliably, leaving no one behind",tribe:"SB"},
+    {t:"The guide — keeping the team anchored in purpose and ensuring learning happens",tribe:"FE"},
+    {t:"The problem-solver — identifying what is broken and proposing a smarter approach",tribe:"IC"},
+    {t:"The communicator — crafting the message and making the work visible",tribe:"CC"}
+  ]},
+  {s:"Working & collaborating",q:"When you disagree with how something is being done, you tend to…",opts:[
+    {t:"Keep showing up and serving faithfully regardless — love speaks louder than criticism",tribe:"SB"},
+    {t:"Raise a principled concern — you care deeply about doing things the right way",tribe:"FE"},
+    {t:"Propose a concrete alternative and volunteer to build it",tribe:"IC"},
+    {t:"Reframe the narrative — a fresh angle often changes how people see the problem",tribe:"CC"}
+  ]},
+  {s:"Working & collaborating",q:"If you could build one thing for CLA right now, what would it be?",opts:[
+    {t:"A structured programme for volunteer service and community outreach",tribe:"SB"},
+    {t:"A comprehensive, accessible formation library — videos, guides, devotionals",tribe:"FE"},
+    {t:"A modern digital platform that makes CLA's work more efficient and far-reaching",tribe:"IC"},
+    {t:"A Catholic content studio producing high-quality media that evangelises culture",tribe:"CC"}
+  ]},
+  {s:"Working & collaborating",q:"What does a successful tribe project look like to you?",opts:[
+    {t:"People's lives were changed — practically, concretely, and materially",tribe:"SB"},
+    {t:"People's faith was strengthened — they know and love their faith more deeply",tribe:"FE"},
+    {t:"Something lasting was built — a tool or system that keeps multiplying impact",tribe:"IC"},
+    {t:"Something beautiful was made — and it drew people closer to Christ",tribe:"CC"}
+  ]},
+  {s:"Values & motivations",q:"What do you most fear about religious communities that grow cold?",opts:[
+    {t:"That they stop serving — that they become comfortable while others suffer",tribe:"SB"},
+    {t:"That they lose doctrinal grounding — that faith becomes vague and rootless",tribe:"FE"},
+    {t:"That they become irrelevant — unable to reach the culture they are called to transform",tribe:"IC"},
+    {t:"That they lose beauty — that worship, story, and expression become lifeless",tribe:"CC"}
+  ]},
+  {s:"Values & motivations",q:"Which vision most excites you for the future of the Catholic Church in Africa?",opts:[
+    {t:"A Church leading the continent in welfare, service, and practical mercy",tribe:"SB"},
+    {t:"A Church producing deeply formed, theologically grounded lay missionaries",tribe:"FE"},
+    {t:"A Church at the frontier of digital and cultural evangelisation",tribe:"IC"},
+    {t:"A Church whose art, music, literature, and storytelling renews African Catholic identity",tribe:"CC"}
+  ]},
+  {s:"Values & motivations",q:"When you think about your legacy in the Church, what would you most want said of you?",opts:[
+    {t:'"They served without counting the cost."',tribe:"SB"},
+    {t:'"They helped others fall in love with the Faith."',tribe:"FE"},
+    {t:'"They built something that carried the Gospel forward for a generation."',tribe:"IC"},
+    {t:'"They made the Faith beautiful and unforgettable."',tribe:"CC"}
+  ]},
+  {s:"Values & motivations",q:"Deep down, which statement most closely describes your calling?",opts:[
+    {t:"I am here to love through action and sacrifice — to be the mercy of Christ to others",tribe:"SB"},
+    {t:"I am here to know the Faith deeply, live it fully, and help others discover its truth",tribe:"FE"},
+    {t:"I am here to build the tools and systems that extend the Church's reach into new frontiers",tribe:"IC"},
+    {t:"I am here to tell the story of Christ through beauty, creativity, and culture",tribe:"CC"}
+  ]}
+];
+
+/* ══════════════════════════════════════
+   SECTION WEIGHTS & GLOBALS
+   ══════════════════════════════════════ */
+const SECTION_WEIGHTS = {
+  "How you engage": 1.0,
+  "Your natural strengths": 1.0,
+  "Faith & spirituality": 1.05,
+  "Working & collaborating": 1.1,
+  "Values & motivations": 1.15
+};
+
+let current = 0;
+const answers = new Array(QUESTIONS.length).fill(null);
+const LETTERS = ['A','B','C','D'];
+let assignedTribeKey = null;
+let scoreSnapshot = {};
+
+let shuffledOrders = [];
+
+function shuffleArray(arr){
+  const a = [...arr];
+  for(let i = a.length-1; i > 0; i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function startQuiz(){
+  shuffledOrders = QUESTIONS.map(q => shuffleArray(q.opts.map((_,i)=>i)));
+  showScreen('screen-quiz');
+  renderQuestion();
+}
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderQuestion(){
+  const q = QUESTIONS[current];
+  const pct = Math.round(((current+1)/QUESTIONS.length)*100);
+  document.getElementById('prog-fill').style.width = pct+'%';
+  document.getElementById('prog-label').textContent = `Question ${current+1}`;
+  document.getElementById('prog-frac').textContent = `${current+1} / ${QUESTIONS.length}`;
+  document.getElementById('section-tag').textContent = `Section — ${q.s}`;
+  document.getElementById('q-number').textContent = `Question ${current+1} of ${QUESTIONS.length}`;
+  document.getElementById('q-text').textContent = q.q;
+
+  const remaining = QUESTIONS.length - current - 1;
+  document.getElementById('q-remaining').textContent =
+    remaining > 0 ? `${remaining} question${remaining>1?'s':''} remaining` : 'Last question';
+
+  const opts = document.getElementById('options');
+  opts.innerHTML = '';
+  const order = shuffledOrders[current] || q.opts.map((_,i)=>i);
+  order.forEach((origIdx, displayPos) => {
+    const opt = q.opts[origIdx];
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn' + (answers[current] === origIdx ? ' selected' : '');
+    btn.innerHTML = `<span class="opt-letter">${LETTERS[displayPos]}</span><span class="opt-text">${opt.t}</span>`;
+    btn.onclick = () => selectAnswer(origIdx);
+    opts.appendChild(btn);
+  });
+
+  document.getElementById('back-btn').disabled = current === 0;
+  document.getElementById('next-btn').disabled = answers[current] === null;
+  document.getElementById('next-btn').innerHTML =
+    current === QUESTIONS.length - 1
+      ? 'See my tribe <svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'
+      : 'Next <svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+}
+
+function selectAnswer(optIndex){
+  answers[current] = optIndex;
+  renderQuestion();
+}
+
+function goNext(){
+  if(answers[current] === null) return;
+  if(current === QUESTIONS.length - 1){ showResult(); return; }
+  current++;
+  renderQuestion();
+}
+
+function goBack(){
+  if(current === 0) return;
+  current--;
+  renderQuestion();
+}
+
+function computeScores(){
+  const raw = {SB:0, FE:0, IC:0, CC:0};
+  const weighted = {SB:0, FE:0, IC:0, CC:0};
+
+  answers.forEach((optIndex, qi) => {
+    if(optIndex === null) return;
+    const q = QUESTIONS[qi];
+    const tribe = q.opts[optIndex].tribe;
+    const w = SECTION_WEIGHTS[q.s] || 1.0;
+    raw[tribe]++;
+    weighted[tribe] += w;
+  });
+
+  return {raw, weighted};
+}
+
+function showResult(){
+  const {raw, weighted} = computeScores();
+  scoreSnapshot = raw;
+
+  const total = Object.values(raw).reduce((s,v) => s+v, 0);
+  const sorted = Object.entries(raw).sort((a,b) => {
+    if(b[1] !== a[1]) return b[1] - a[1];
+    return weighted[b[0]] - weighted[a[0]];
+  });
+
+  const [topKey] = sorted[0];
+  const [secondKey, secondVal] = sorted[1];
+  assignedTribeKey = topKey;
+
+  const tieNotice = document.getElementById('tie-notice');
+  if(raw[topKey] === secondVal){
+    tieNotice.style.display = 'block';
+    document.getElementById('tie-tribe-name').textContent = TRIBES[topKey].name;
+  } else {
+    tieNotice.style.display = 'none';
+  }
+
+  const tribe = TRIBES[topKey];
+  document.getElementById('result-banner').style.background = tribe.banner;
+  document.getElementById('result-eyebrow').textContent = 'Your charism discernment';
+  document.getElementById('result-tribe-name').textContent = tribe.name;
+  document.getElementById('result-charism-sub').textContent = tribe.charism;
+
+  document.getElementById('result-tags').innerHTML = tribe.tags.map(t =>
+    `<span class="c-tag" style="background:${tribe.tagBg};color:${tribe.tagText};border-color:${tribe.tagBorder}">${t}</span>`
+  ).join('');
+
+  document.getElementById('result-desc').textContent = tribe.desc;
+  document.getElementById('result-cta').innerHTML = tribe.cta;
+
+  const bars = document.getElementById('score-bars');
+  bars.innerHTML = sorted.map(([k,v]) => {
+    const pct = Math.round((v/total)*100);
+    return `<div class="score-row">
+      <span class="score-name">${TRIBES[k].name}</span>
+      <div class="score-track"><div class="score-bar" style="width:0%;background:${TRIBES[k].barColor}" data-pct="${pct}"></div></div>
+      <span class="score-pct">${pct}%</span>
+    </div>`;
+  }).join('');
+
+  showScreen('screen-result');
+  setTimeout(() => {
+    document.querySelectorAll('.score-bar').forEach(b => {
+      b.style.width = b.dataset.pct + '%';
+    });
+  }, 200);
+}
+
+function proceedToRegister(){
+  const tribe = TRIBES[assignedTribeKey];
+  const band = document.getElementById('reg-tribe-band');
+  band.style.background = tribe.banner;
+  document.getElementById('reg-tribe-dot').style.background = '#ffffff55';
+  document.getElementById('reg-tribe-name-lg').textContent = tribe.name;
+  document.getElementById('assigned-tribe-display').textContent = `${tribe.name} — ${tribe.charism}`;
+  document.getElementById('submit-error').style.display = 'none';
+  showScreen('screen-register');
+}
+
+function validateField(id, testFn){
+  const field = document.getElementById('field-'+id);
+  const input = document.getElementById('inp-'+id);
+  if(!field || !input) return true;
+  const ok = testFn(input.value.trim());
+  field.classList.toggle('invalid', !ok);
+  return ok;
+}
+
+function printResult(){ window.print() }
+
+function restart(){
+  current = 0;
+  answers.fill(null);
+  assignedTribeKey = null;
+  scoreSnapshot = {};
+  showScreen('screen-welcome');
+}
+
+/* ══════════════════════════════════════
+   WHATSAPP AUTO-FORMATTER
+   ══════════════════════════════════════ */
+document.getElementById('inp-whatsapp').addEventListener('input', function(e) {
+  let val = this.value;
+  if (val.length > 0 && !val.startsWith('+')) {
+    this.value = '+' + val.replace(/[^\d\s\-().]/g, '');
+  }
+});
+
+/* ══════════════════════════════════════
+   DATABASE SUBMISSION (GOOGLE APPS SCRIPT)
+   ══════════════════════════════════════ */
+function submitForm() {
+  /* 1. Validate the form inputs first */
+  const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const isPhone = v => /^\+\d{1,3}[\d\s\-().]{7,}$/.test(v.trim());
+  const notEmpty = v => v.length > 0;
+
+  const valid = [
+    validateField('firstname', notEmpty),
+    validateField('lastname', notEmpty),
+    validateField('email', isEmail),
+    validateField('whatsapp', isPhone),
+    validateField('location', notEmpty),
+    validateField('occupation', notEmpty),
+    validateField('parish', notEmpty),
+    validateField('diocese', notEmpty),
+    validateField('country', notEmpty),
+    validateField('education', notEmpty),
+    validateField('bio', v => v.length >= 20)
+  ].every(Boolean);
+
+  if(!valid){
+    window.scrollTo({top: document.getElementById('screen-register').offsetTop, behavior:'smooth'});
+    return;
+  }
+
+  /* 2. Extract values using our UI's input IDs */
+  const firstName = document.getElementById('inp-firstname').value.trim();
+  const lastName = document.getElementById('inp-lastname').value.trim();
+  const fullName = firstName + " " + lastName;
+  
+  const email = document.getElementById('inp-email').value.trim();       
+  const whatsapp = document.getElementById('inp-whatsapp').value.trim(); 
+
+  const city = document.getElementById('inp-location').value.trim();
+  const country = document.getElementById('inp-country').value;
+  const parish = document.getElementById('inp-parish').value.trim();
+  const diocese = document.getElementById('inp-diocese').value.trim();
+  const locationDetails = "Parish: " + parish + ", " + diocese + " | Location: " + city + ", " + country;
+
+  const occupation = document.getElementById('inp-occupation').value.trim();
+  const education = document.getElementById('inp-education').value;
+  const professionalDetails = "Occupation: " + occupation + " | Education: " + education;
+
+  const shortBio = document.getElementById('inp-bio').value.trim();
+  const personalGoals = document.getElementById('inp-goals').value.trim();
+  const heardAbout = document.getElementById('inp-howheard').value;
+
+  const tribeObj = TRIBES[assignedTribeKey];
+  const tribeAssigned = tribeObj.name; 
+  const dominantCharism = tribeObj.charism;
+
+  /* 3. Package the payload */
+  const payload = {
+      "docCode": "DOC-16",
+      "tribe": tribeAssigned,
+      "submittedBy": fullName,
+      "email": email,
+      "whatsapp": whatsapp,
+      "role": "New Member",
+      "field1": "Charism: " + dominantCharism, 
+      "field2": locationDetails,
+      "field3": professionalDetails,
+      "field4": "Bio: " + shortBio,
+      "field5": "Goals: " + personalGoals,
+      "field6": "How they heard about CLA: " + heardAbout,
+      "field7": "Scores -> SB:" + scoreSnapshot.SB + " FE:" + scoreSnapshot.FE + " IC:" + scoreSnapshot.IC + " CC:" + scoreSnapshot.CC,
+      "field8": "", 
+      "field9": "",
+      "field10": "Status: Pending Orientation"
+  };
+
+  /* 4. Disguise data as standard Form Data */
+  const urlEncodedData = new URLSearchParams();
+  urlEncodedData.append("payload", JSON.stringify(payload));
+
+  /* 5. Route to your Single Master-Web App UR */
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbwr59x7EBO9aX8hcUQ7iJ6BirYOwrPGDpM-7DS1M4kRmigqvX6azONLakdPMrQ0Crum/exec";
+
+  /* 6. UI Loading State */
+  const btn = document.getElementById('submit-btn');
+  const spinner = document.getElementById('submit-spinner');
+  const icon = document.getElementById('submit-icon');
+  btn.disabled = true;
+  spinner.style.display = 'block';
+  icon.style.display = 'none';
+  btn.childNodes[btn.childNodes.length-1].textContent = ' Submitting…';
+
+  /* 7. Send data */
+  fetch(webAppUrl, {
+      method: 'POST',
+      mode: 'no-cors', 
+      body: urlEncodedData
+  })
+  .then(() => {
+      document.getElementById('confirm-firstname').textContent = firstName;
+      document.getElementById('confirm-tribe').textContent = tribeAssigned;
+      showScreen('screen-confirm');
+  })
+  .catch(error => {
+      console.error('Error submitting registration:', error);
+      btn.disabled = false;
+      spinner.style.display = 'none';
+      icon.style.display = 'block';
+      btn.childNodes[btn.childNodes.length-1].textContent = ' Try again';
+      document.getElementById('submit-error').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Church Life Africa | Tribe Application Portal</title>
+  <title>Church Life Africa | Application Closed</title>
   
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -28,343 +28,80 @@
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
       line-height: 1.6;
+      min-height: 70vh; /* Ensures the page doesn't look empty */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .form-container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-
-    /* PROGRESS BAR */
-    .progress-strip {
+    .closed-container { 
+      max-width: 600px; 
+      margin: 0 auto; 
+      padding: 60px 30px; 
+      text-align: center;
       background: var(--white);
-      border-bottom: 1px solid var(--edge);
-      padding: 15px 0;
-      position: sticky;
-      top: 80px;
-      z-index: 100;
-      margin-bottom: 40px;
+      border: 1px solid var(--edge);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      animation: fadeIn 0.5s ease;
     }
-    .p-bar { display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .p-dot { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--edge); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--muted); transition: 0.3s; }
-    .p-dot.active { border-color: var(--maroon); background: var(--maroon); color: white; }
-    .p-dot.done { border-color: var(--gold); background: var(--gold); color: var(--maroon); }
-    .p-line { width: 40px; height: 2px; background: var(--edge); }
-    .p-line.done { background: var(--gold); }
 
-    /* PANELS */
-    .panel { display: none; animation: fadeIn 0.4s ease; }
-    .panel.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    .step-head span { color: var(--gold); text-transform: uppercase; font-weight: 800; font-size: 11px; letter-spacing: 2px; display: block; margin-bottom: 8px; }
-    .step-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; color: var(--maroon); margin-bottom: 10px; line-height: 1.2; }
-    .step-head p { color: var(--muted); font-size: 14px; margin-bottom: 30px; }
-
-    /* INPUTS */
-    .field { margin-bottom: 22px; }
-    .field label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
-    .field input, .field select, .field textarea {
-      width: 100%; padding: 13px 15px; border: 1.5px solid var(--edge); border-radius: 10px;
-      font-size: 15px; font-family: inherit; transition: 0.2s; background: var(--white);
+    @keyframes fadeIn { 
+      from { opacity: 0; transform: translateY(10px); } 
+      to { opacity: 1; transform: translateY(0); } 
     }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--maroon); outline: none; box-shadow: 0 0 0 4px rgba(107,29,42,0.05); }
-    .two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-    /* ROLE OPTIONS */
-    .role-opt { position: relative; margin-bottom: 12px; }
-    .role-opt input { position: absolute; opacity: 0; }
-    .role-opt label {
-      display: block; padding: 18px; border: 1.5px solid var(--edge); border-radius: 12px;
-      cursor: pointer; background: var(--white); transition: 0.2s;
+    .closed-container h1 { 
+      font-family: 'Cormorant Garamond', serif; 
+      font-size: 40px; 
+      color: var(--maroon); 
+      margin-bottom: 15px; 
+      line-height: 1.2; 
     }
-    .role-opt input:checked + label { border-color: var(--maroon); background: #FBF0F2; }
-    .role-opt strong { display: block; color: var(--maroon); font-size: 16px; margin-bottom: 4px; }
-    .role-opt small { font-size: 13px; color: var(--muted); display: block; line-height: 1.5; }
 
-    /* NAVIGATION */
-    .nav-btns { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--edge); }
-    .btn { padding: 14px 30px; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.2s; border: none; font-size: 15px; }
-    .btn-next { background: var(--gold); color: white; }
-    .btn-next:hover { background: #B8933A; }
-    .btn-back { background: var(--white); color: var(--muted); border: 1.5px solid var(--edge); }
+    .closed-container p { 
+      color: var(--muted); 
+      font-size: 16px; 
+      margin-bottom: 35px; 
+    }
 
-    /* SUCCESS SCREEN */
-    #success-screen { display: none; text-align: center; padding: 60px 20px; }
+    .btn-home { 
+      display: inline-block;
+      padding: 14px 30px; 
+      border-radius: 12px; 
+      font-weight: 700; 
+      text-decoration: none;
+      background: var(--gold); 
+      color: white; 
+      transition: 0.2s; 
+      border: none; 
+      font-size: 15px; 
+    }
 
-    @media (max-width: 600px) { .two-grid { grid-template-columns: 1fr; } #cla-tribe-portal { padding-top: 130px; } }
+    .btn-home:hover { 
+      background: #B8933A; 
+    }
+
+    @media (max-width: 600px) { 
+      #cla-tribe-portal { padding-top: 130px; } 
+      .closed-container { padding: 40px 20px; border: none; background: transparent; box-shadow: none;}
+    }
   </style>
 
-  <div class="progress-strip">
-    <div class="p-bar">
-      <div class="p-dot active" id="dot1">1</div><div class="p-line" id="line1"></div>
-      <div class="p-dot" id="dot2">2</div><div class="p-line" id="line2"></div>
-      <div class="p-dot" id="dot3">3</div><div class="p-line" id="line3"></div>
-      <div class="p-dot" id="dot4">4</div>
-    </div>
+  <div class="closed-container">
+    <div style="font-size:50px; margin-bottom:15px;">⏳</div>
+    <h1>Applications Closed</h1>
+    <p>Thank you for your interest in joining a Church Life Africa Tribe. The application window has officially closed. Please stay tuned to our communications for future opportunities.</p>
+    <a href="/" class="btn-home">Return to Homepage</a>
   </div>
 
-  <div class="form-container">
-    <form id="cla-master-form">
-      
-      <div class="panel active" id="step1">
-  <div class="step-head">
-    <span>Step 1 — Personal Details</span>
-    <h2>Tell us about yourself</h2>
-    <p>A few basics so we know who you are and how to reach you.</p>
-  </div>
-  
-  <div class="two-grid">
-    <div class="field">
-      <label>First Name *</label>
-      <input type="text" name="firstName" required placeholder="Enter first name">
-    </div>
-    <div class="field">
-      <label>Last Name *</label>
-      <input type="text" name="lastName" required placeholder="Enter last name">
-    </div>
-  </div>
-
-  <div class="field">
-    <label>Email Address *</label>
-    <input type="email" name="email" required placeholder="example@email.com">
-  </div>
-
-  <div class="field">
-    <label>WhatsApp Number *</label>
-    <input type="tel" 
-           name="whatsapp" 
-           pattern="[0-9]{11}" 
-           maxlength="11" 
-           required 
-           placeholder="e.g. 08012345678" 
-           title="Please enter exactly 11 digits (e.g. 08012345678)">
-  </div>
-
-  <div class="two-grid">
-    <div class="field">
-      <label>Parish *</label>
-      <input type="text" name="parish" required placeholder="Your parish name">
-    </div>
-    <div class="field">
-      <label>Diocese *</label>
-      <input type="text" name="diocese" required placeholder="Your diocese">
-    </div>
-  </div>
-
-  <div class="field">
-    <label>Occupation / Profession *</label>
-    <input type="text" name="occupation" required placeholder="What do you do?">
-  </div>
-
-  <div class="nav-btns">
-    <span></span>
-    <button type="button" class="btn btn-next" onclick="move(2)">Continue →</button>
-  </div>
-</div>
-
-      <div class="panel" id="step2">
-        <div class="step-head">
-          <span>Step 2 — Tribe Selection</span>
-          <h2>What Tribe are you applying for?</h2>
-        </div>
-        <div class="field">
-          <label>Select Tribe</label>
-          <select name="tribe" required>
-            <option value="">— Choose a Tribe —</option>
-            <option value="Innovators Circle">Innovators Circle</option>
-            <option value="Faith Explorers">Faith Explorers</option>
-            <option value="Service Builders">Service Builders</option>
-            <option value="Culture Creators">Culture Creators</option>
-          </select>
-        </div>
-        <div class="nav-btns"><button type="button" class="btn btn-back" onclick="move(1)">← Back</button><button type="button" class="btn btn-next" onclick="move(3)">Continue →</button></div>
-      </div>
-
-      <div class="panel" id="step3">
-        <div class="step-head">
-          <span>Step 3 — Leadership Role</span>
-          <h2>What Steward position are you applying for?</h2>
-        </div>
-        
-        <div class="role-opt">
-          <input type="radio" name="role" id="steward" value="Steward" required>
-          <label for="steward">
-            <strong>Steward</strong>
-            <small>Guiding members, coordinating projects, and reporting to CLA leadership.</small>
-          </label>
-        </div>
-        <div class="role-opt">
-          <input type="radio" name="role" id="costeward" value="Co-Steward" required>
-          <label for="costeward">
-            <strong>Co-Steward</strong>
-            <small>Supporting the Steward in coordinating tribe projects and serving members.</small>
-          </label>
-        </div>
-
-        <div class="field" style="margin-top:20px;">
-          <label>EC / TSL Formation Status</label>
-          <p>Stewards must be willing to enroll in EC or TSL</p>
-          <select name="formationStatus">
-            <option value="">— Select Status —</option>
-            <option value="Plan to enrol in EC/TSL">Have plan to enrol in EC or TSL</option>
-            <option value="Do not plan to enroll for EC/TSL">Do not plan to enroll in EC or TSL</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>GSI Residential Training Availability</label>
-          <select name="gsiAvailability">
-            <option value="">— Confirm Availability —</option>
-            <option value="Available">Yes, I am available (June 12 & 13)</option>
-            <option value="Not Available">Not available (I cannot make these dates)</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Realistic Monthly Commitment *</label>
-          <select name="hours" required>
-            <option value="">— Select —</option>
-            <option value="2-4 hours">2-4 hours</option>
-            <option value="5-8 hours">5-8 hours</option>
-            <option value="9-12 hours">9-12 hours</option>
-            <option value="12+ hours">12+ hours</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>What skills or gifts do you bring?</label> 
-          <input type="text" name="skills" placeholder="e.g., Leadership, Project Management, Organization, etc.">
-        </div>
-
-        <div class="nav-btns"><button type="button" class="btn btn-back" onclick="move(2)">← Back</button><button type="button" class="btn btn-next" onclick="move(4)">Continue →</button></div>
-      </div>
-
-      <div class="panel" id="step4">
-        <div class="step-head">
-          <span>Step 4 — Final Intent</span>
-          <h2>Purpose & Intent</h2>
-        </div>
-        <div class="field">
-          <label>Why do you choose to be a steward for your tribe?</label>
-          <textarea name="whySteward" rows="4" placeholder="Briefly share your motivation (80 words or less)"></textarea>
-        </div>
-        <div class="field">
-          <label>What is one gift or experience you would bring?</label>
-          <textarea name="uniqueGift" rows="2" placeholder="e.g., I have 3 years experience in community organizing / I am skilled in digital communication etc"></textarea>
-        </div>
-        <div class="field">
-          <label>Anything else CLA should know? (Optional)</label>
-          <textarea name="otherInfo" rows="2"></textarea>
-        </div>
-
-        <div style="display:flex; gap:10px; margin-bottom:20px;">
-          <input type="checkbox" id="consent" required>
-          <label for="consent" style="font-size:13px; color:var(--muted);">I confirm that the information provided is accurate and complete</label>
-        </div>
-
-        <div class="nav-btns"><button type="button" class="btn btn-back" onclick="move(3)">← Back</button><button type="button" class="btn btn-next" style="background:var(--maroon);" onclick="submitData()">Submit Application →</button></div>
-      </div>
-    </form>
-
-    <div id="success-screen">
-      <div style="font-size:60px; margin-bottom:20px;">🙏</div>
-      <h2 style="font-family:'Cormorant Garamond', serif; font-size:36px; color:var(--maroon);">Application Received</h2>
-      <p>Your application has been recorded. We will contact you within 5-7 working days</p>
-    </div>
-  </div>
 </main>
+
 <footer>
   <p>&copy; <span id="year"></span> Church Life Africa</p>
 </footer>
 
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/header.js" defer></script>
-<script>
-    let currentStep = 1;
-    const sheetURL = 'https://script.google.com/macros/s/AKfycbxDbnuYkAAeARcyMx0BZY32T7LNJSBw3DW_8M65N4QRySOEllr0dUysqg3WmhxxtJ0/exec';
-
-    function move(n) {
-      // VALIDATION: Check fields before moving forward
-      if (n > currentStep) {
-        const currentPanel = document.getElementById('step' + currentStep);
-        const inputs = currentPanel.querySelectorAll('input, select, textarea');
-        
-        let allValid = true;
-        inputs.forEach(input => {
-          // If the field is hidden (like radio buttons not selected), checkValidity handles it
-          if (!input.checkValidity()) {
-            input.reportValidity(); // Shows the "Please fill out this field" or "Enter an email" bubble
-            allValid = false;
-          }
-        });
-
-        if (!allValid) return; // Stop the move if a field is invalid
-      }
-
-      const targetPanel = document.getElementById('step' + n);
-      if (targetPanel) {
-        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-        targetPanel.classList.add('active');
-        currentStep = n;
-        updateProgress();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    function updateProgress() {
-      for (let i = 1; i <= 4; i++) {
-        const dot = document.getElementById('dot' + i);
-        if(dot) {
-          dot.classList.remove('active', 'done');
-          if (i < currentStep) dot.classList.add('done');
-          if (i === currentStep) dot.classList.add('active');
-        }
-        const line = document.getElementById('line' + i);
-        if(line) line.classList.toggle('done', i < currentStep);
-      }
-    }
-
-    function submitData() {
-      const form = document.getElementById('cla-master-form');
-      if (!form) return;
-
-      // FINAL VALIDATION: Check everything one last time
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const consentBox = document.getElementById('consent');
-      if(consentBox && !consentBox.checked) { 
-        alert("Please confirm the consent box"); 
-        return; 
-      }
-
-      const submitBtn = document.querySelector('.btn-next[onclick="submitData()"]');
-      if (submitBtn) {
-        submitBtn.innerText = "Processing...";
-        submitBtn.disabled = true;
-      }
-
-      fetch(sheetURL, { method: 'POST', body: new FormData(form) })
-        .then(() => {
-          form.style.display = 'none';
-          const progressStrip = document.querySelector('.progress-strip');
-          if(progressStrip) progressStrip.style.display = 'none';
-          
-          const successScreen = document.getElementById('success-screen');
-          if(successScreen) {
-            successScreen.style.display = 'block';
-          }
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        })
-        .catch(err => {
-          console.error(err);
-          alert("Connection Error. Data might not have saved.");
-          if (submitBtn) {
-            submitBtn.innerText = "Submit Application →";
-            submitBtn.disabled = false;
-          }
-        });
-    }
-</script>
 </body>
 </html>
